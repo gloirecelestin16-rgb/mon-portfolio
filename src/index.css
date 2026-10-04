@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@keyframes blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%      { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+.blob {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: blob 10s ease-in-out infinite;
+}
+.blob-back {
+  border-radius: 40% 60% 60% 40% / 40% 50% 50% 60%;
+  animation: blob 13s ease-in-out infinite reverse;
+}
+.floaty { animation: floaty 5s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .blob, .blob-back, .floaty { animation: none; }
+}
