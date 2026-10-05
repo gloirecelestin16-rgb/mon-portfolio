@@ -134,7 +134,7 @@ const text = {
 
         {
           title: "Industrial electricity (practical internship)",
-          company: "Vocational Training Center in Electricity (CFPE))",
+          company: "Vocational Training Center in Electricity (CFPE)",
           date: "July – August 2026",
           logo: "CFPE.jpg",
           initials: "CFPE",
@@ -158,7 +158,8 @@ const text = {
 
         {
           title: "Smart systems technician (intern)",
-          company: "National Agency for the Promotion of Research and Innovation Results (ANVRI), Brazzaville",
+          company:
+            "National Agency for the Promotion of Research and Innovation Results (ANVRI), Brazzaville",
           date: "August 28, 2024 – February 6, 2025",
           logo: "ANVRI.jpg",
           initials: "AN",
@@ -238,14 +239,7 @@ const text = {
 
         {
           title: "Programming",
-          items: [
-            "C",
-            "C++",
-            "C#",
-            "Python",
-            "React",
-            "HTML",
-          ],
+          items: ["C", "C++", "C#", "Python", "React", "HTML"],
         },
 
         {
@@ -262,47 +256,49 @@ const text = {
 
         {
           title: "Process safety",
-          items: [
-            "HSE",
-            "H₂S",
-            "ATEX",
-          ],
+          items: ["HSE", "H₂S", "ATEX"],
         },
       ],
     },
 
     projects: {
       title: "Projects",
+      pdfBtn: "View PDF",
 
       items: [
         {
           title: "Automated smart greenhouse",
           desc: "Arduino-based system with 7 sensors: irrigation, ventilation, data acquisition, remote control and thermal regulation through PID loops.",
           tags: ["Arduino", "PID", "Sensors"],
+          link: "",
         },
 
         {
           title: "MaintiTrack: CMMS",
           desc: "Computerized maintenance management system (CMMS) designed for mobile and desktop, built with React.",
           tags: ["React", "CMMS", "UX/UI"],
+          link: "",
         },
 
         {
           title: "Automated robotic arm",
           desc: "Construction of an automated robotic arm, the subject of my final-year Bachelor's thesis.",
           tags: ["Automation", "Robotics"],
+          link: "",
         },
 
         {
           title: "Control Valve Sizing",
           desc: "Engineering project focused on the sizing and selection of a control valve according to process operating conditions and instrumentation requirements.",
           tags: ["Instrumentation", "Control Valve", "Dimensioning"],
+          link: "projets/dimensionnement-vanne-regulation.pdf",
         },
 
         {
           title: "Reactive Power Compensation",
           desc: "Electrical engineering project focused on compensating reactive energy in an electrical installation in order to improve the power factor and optimize electrical energy consumption.",
           tags: ["Electrical Engineering", "Power Factor", "Compensation"],
+          link: "projets/compensation-energie-reactive.pdf",
         },
       ],
     },
@@ -386,8 +382,7 @@ const text = {
             "IoT (Internet of Things), Wireless and Cloud Computing, Emerging Technologies",
           company: "MTN Congo Foundation",
           date: "Issued May 2025",
-          desc:
-            "Skills: object-oriented programming languages, computer technology",
+          desc: "Skills: object-oriented programming languages, computer technology",
           id: "TE1G93UYBYWS",
           link: "https://www.coursera.org/account/accomplishments/verify/TE1G93UYBYWS",
           logo: "MTN.jpg",
@@ -560,7 +555,8 @@ const text = {
 
         {
           title: "Technicien en systèmes intelligents (stagiaire)",
-          company: "Agence Nationale de Valorisation des Résultats de la Recherche et de l’Innovation (ANVRI), Brazzaville",
+          company:
+            "Agence Nationale de Valorisation des Résultats de la Recherche et de l’Innovation (ANVRI), Brazzaville",
           date: "28 août 2024 – 6 février 2025",
           logo: "ANVRI.jpg",
           initials: "AN",
@@ -640,14 +636,7 @@ const text = {
 
         {
           title: "Programmation",
-          items: [
-            "C",
-            "C++",
-            "C#",
-            "Python",
-            "React",
-            "HTML",
-          ],
+          items: ["C", "C++", "C#", "Python", "React", "HTML"],
         },
 
         {
@@ -664,47 +653,49 @@ const text = {
 
         {
           title: "Sécurité des procédés",
-          items: [
-            "HSE",
-            "H₂S",
-            "ATEX",
-          ],
+          items: ["HSE", "H₂S", "ATEX"],
         },
       ],
     },
 
     projects: {
       title: "Projets",
+      pdfBtn: "Voir le PDF",
 
       items: [
         {
           title: "Serre intelligente automatisée",
           desc: "Système basé sur Arduino avec 7 capteurs : irrigation, ventilation, acquisition de données, contrôle à distance et régulation thermique par boucles PID.",
           tags: ["Arduino", "PID", "Capteurs"],
+          link: "",
         },
 
         {
           title: "MaintiTrack : GMAO",
           desc: "Application de gestion de maintenance assistée par ordinateur (GMAO), pensée pour mobile et desktop, développée avec React.",
           tags: ["React", "GMAO", "UX/UI"],
+          link: "",
         },
 
         {
           title: "Bras robotique automatisé",
           desc: "Réalisation d'un bras robotique automatisé, sujet de mon mémoire de fin d'études de Licence.",
           tags: ["Automatisme", "Robotique"],
+          link: "",
         },
 
         {
           title: "Dimensionnement d'une vanne de régulation",
           desc: "Étude de dimensionnement et de sélection d'une vanne de régulation en fonction des conditions de fonctionnement du procédé et des exigences d'instrumentation.",
           tags: ["Instrumentation", "Vanne de régulation", "Dimensionnement"],
+          link: "projets/dimensionnement-vanne-regulation.pdf",
         },
 
         {
           title: "Compensation de l'énergie réactive",
           desc: "Étude électrique portant sur la compensation de l'énergie réactive afin d'améliorer le facteur de puissance et d'optimiser la consommation d'énergie électrique.",
           tags: ["Électrotechnique", "Facteur de puissance", "Compensation"],
+          link: "projets/compensation-energie-reactive.pdf",
         },
       ],
     },
@@ -788,8 +779,7 @@ const text = {
             "IoT (Internet des objets), informatique sans fil et en nuage, technologies émergentes",
           company: "Fondation MTN Congo",
           date: "Émise en mai 2025",
-          desc:
-            "Compétences : langages de programmation orientés objets, technologie informatique",
+          desc: "Compétences : langages de programmation orientés objets, technologie informatique",
           id: "TE1G93UYBYWS",
           link: "https://www.coursera.org/account/accomplishments/verify/TE1G93UYBYWS",
           logo: "MTN.jpg",
@@ -933,7 +923,7 @@ function CertButton({
   onOpen: (url: string, title: string) => void;
 }) {
   const cls =
-    "mt-4 inline-flex items-center gap-2 rounded-lg border border-orange-400 px-4 py-2 text-sm font-semibold text-orange-400 transition hover:bg-orange-400 hover:text-slate-900";
+    "mt-4 inline-flex items-center gap-2 rounded-lg border border-orange-400 px-4 py-2 text-sm font-semibold text-orange-400";
 
   if (href.startsWith("http")) {
     return (
@@ -1007,14 +997,16 @@ function CertViewer({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 text-white">
-          <p className="min-w-0 truncate font-semibold">{title}</p>
+          <p className="min-w-0 truncate font-semibold">
+            {title}
+          </p>
 
           <div className="flex shrink-0 items-center gap-2">
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-orange-400 px-3 py-1.5 text-sm font-semibold text-orange-400 transition hover:bg-orange-400 hover:text-slate-900"
+              className="rounded-lg border border-orange-400 px-3 py-1.5 text-sm font-semibold text-orange-400"
             >
               {openLabel}
             </a>
@@ -1023,7 +1015,7 @@ function CertViewer({
               type="button"
               onClick={onClose}
               aria-label={closeLabel}
-              className="rounded-lg border border-white/20 p-1.5 transition hover:text-orange-400"
+              className="rounded-lg border border-white/20 p-1.5"
             >
               <X size={18} />
             </button>
@@ -1213,6 +1205,7 @@ export default function App() {
             >
               {dark ? <Sun size={17} /> : <Moon size={17} />}
             </button>
+
           </nav>
 
           <div className="flex items-center gap-2 lg:hidden">
@@ -1336,8 +1329,8 @@ export default function App() {
               {/* CV BUTTON */}
 
               <a
-                href={`${import.meta.env.BASE_URL}CV.pdf`}
-                download="Celestin-Gloire-Ledilem-MOUYABI-CV.pdf"
+                href={`${import.meta.env.BASE_URL}CV_Celestin_Mouyabi.pdf`}
+                download="CV_Celestin_Mouyabi.pdf"
                 className="inline-flex items-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-900 shadow-lg"
               >
                 <Download size={18} />
@@ -1368,6 +1361,7 @@ export default function App() {
 
             </div>
           </div>
+
         </div>
       </main>
 
@@ -1641,6 +1635,22 @@ export default function App() {
 
               </div>
 
+              {project.link && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    setViewer({
+                      url: `${import.meta.env.BASE_URL}${project.link}`,
+                      title: project.title,
+                    })
+                  }
+                  className="mt-5 inline-flex items-center gap-2 rounded-lg bg-orange-400 px-4 py-2 font-semibold text-slate-900 shadow-lg"
+                >
+                  <FolderGit2 size={16} />
+                  {t.projects.pdfBtn}
+                </button>
+              )}
+
             </Reveal>
           ))}
 
@@ -1888,7 +1898,7 @@ export default function App() {
 
       </footer>
 
-      {/* CERTIFICATE / IMAGE VIEWER */}
+      {/* CERTIFICATE / IMAGE / PDF VIEWER */}
 
       {viewer && (
         <CertViewer
