@@ -1,285 +1,31 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import {
-  Home, User, GraduationCap, Code2, FolderGit2, Mail,
-  Menu, X, Sun, Moon, Globe, Phone, MapPin, Briefcase, Award,
+  Home,
+  User,
+  GraduationCap,
+  Code2,
+  FolderGit2,
+  Mail,
+  Menu,
+  X,
+  Sun,
+  Moon,
+  Globe,
+  Phone,
+  MapPin,
+  Briefcase,
+  Award,
+  Download,
 } from "lucide-react";
 import Particles from "./Particules";
 
-type Lang = "fr" | "en";
+type Lang = "en" | "fr";
 
 const EMAIL = "gloirecelestin16@gmail.com";
 const PHONE = "+242 06 828 82 38";
 const PHONE_LINK = "+242068288238";
 
 const text = {
-  fr: {
-    nav: {
-      accueil: "Accueil",
-      apropos: "À propos",
-      formations: "Formations",
-      experience: "Expérience",
-      competences: "Compétences",
-      projets: "Projets",
-      certificats: "Certificats",
-      contact: "Contact",
-    },
-    contactBtn: "Me contacter",
-    hello: "Bonjour,",
-    iam: "je suis",
-    desc: "Étudiant en Génie Électrique, spécialité Automatisme & Instrumentation. Je recherche un stage dans l'industrie Oil & Gas. N'hésitez pas à me contacter.",
-    about: {
-      title: "À propos",
-      role: "Technicien de maintenance",
-      p1: "Je mets mes compétences en électrotechnique, automatisme, instrumentation, hydraulique, pneumatique et maintenance industrielle (GMAO) au service de la fiabilité, de la disponibilité et de la performance des équipements : planification et exécution de la maintenance préventive et corrective, suivi des indicateurs MTTR/MTBF et actions d'amélioration.",
-      p2: "Titulaire des modules 7 et 8 de TotalEnergies, je suis sensibilisé aux exigences HSE et aux risques liés aux activités industrielles (H₂S, ATEX), que j'intègre dans l'exécution des travaux de maintenance.",
-      p3: "Je recherche un stage dans l'industrie Oil & Gas, à effectuer en décembre.",
-      softTitle: "Soft skills",
-      soft: [
-        "Gestion du stress et du temps",
-        "Adaptabilité, flexibilité et bonne communication",
-        "Ponctualité et assiduité",
-        "Innovation et amélioration continue",
-      ],
-      interestsTitle: "Centres d'intérêt",
-      interests: [
-        "Football et Basketball : esprit d'équipe, stratégie et leadership",
-        "Bénévolat : engagement communautaire au sein de clubs et associations",
-      ],
-    },
-    edu: {
-      title: "Formations",
-      studies: [
-        {
-          title: "Licence en Automatisme et Instrumentation",
-          place: "Institut International 2i, Pointe-Noire",
-          period: "2024 – 2026 · Diplôme prévu : décembre 2026",
-          logo: "2i.jpg",
-          initials: "2i",
-        },
-        {
-          title: "Baccalauréat scientifique (Série D)",
-          place: "Lycée de Madingou, Madingou",
-          period: "2023",
-          logo: "madingou.jpg",
-          initials: "LM",
-        },
-      ],
-    },
-    exp: {
-      title: "Expérience",
-      items: [
-        {
-          title: "Responsable formation",
-          place: "BiviTech, Pointe-Noire · Temps partiel · Sur site",
-          period: "Mars 2026 – aujourd'hui",
-          logo: "Bivitech.jpg",
-          initials: "BT",
-          points: [
-            "Conception et mise en œuvre de programmes de formation destinés aux jeunes, aux membres et aux partenaires, pour renforcer leurs compétences en numérique, technologies et innovation.",
-            "Identification des besoins en compétences et conception de modules de formation pratiques et adaptés.",
-            "Organisation et coordination d'ateliers et de séminaires.",
-            "Promotion de l'innovation et de l'entrepreneuriat numérique.",
-            "Évaluation de l'impact des formations et amélioration continue.",
-            "Compétences : ingénierie de formation, gestion de projets, animation de formations, innovation et transformation digitale.",
-          ],
-        },
-        {
-          title: "Ambassadeur ISIC",
-          place: "International Student Identity Card, République du Congo · Temps plein · Sur site",
-          period: "Mai 2025 – aujourd'hui",
-          logo: "ISIC.png",
-          initials: "ISIC",
-          points: [
-            "Promotion de la carte ISIC auprès des étudiants et des institutions, et sensibilisation aux avantages étudiants et aux opportunités internationales.",
-            "Développement et gestion de partenariats stratégiques (transport, services, entreprises locales).",
-            "Organisation et participation à des actions de communication et d'événements, et représentation de la marque ISIC au niveau local.",
-            "Compétences : négociation et développement de partenariats, communication et marketing terrain, leadership et gestion d'initiatives, réseautage professionnel, gestion des effectifs et des ressources, communication stratégique.",
-          ],
-        },
-        {
-          title: "Électricité industrielle (stage pratique)",
-          place: "CFPE",
-          period: "Juillet – août 2026",
-          logo: "CFPE.jpg",
-          initials: "CFPE",
-          points: [
-            "Commande de machines synchrones et de variateurs de fréquence TOSHIBA.",
-          ],
-        },
-        {
-          title: "Atelier pratique (stage pratique)",
-          place: "CEFA Automobile, Pointe-Noire",
-          period: "7 février 2026 – 17 mars 2026",
-          logo: "CEFA.png",
-          initials: "CEFA",
-          points: [
-            "Maintenance préventive et corrective et diagnostic des systèmes électroniques embarqués avancés, garantissant fiabilité et performance des véhicules.",
-          ],
-        },
-        {
-          title: "Technicien en systèmes intelligents (stagiaire)",
-          place: "ANVRI, Brazzaville",
-          period: "28 août 2024 – 6 février 2025",
-          logo: "ANVRI.jpg",
-          initials: "AN",
-          points: [
-            "Conception d'un système automatisé de serre intelligente basé sur Arduino, intégrant 7 capteurs pour l'irrigation, la ventilation, l'acquisition de données et le contrôle à distance.",
-            "Mise en œuvre et optimisation de boucles PID, avec maintenance des instruments et actionneurs, améliorant la régulation thermique et la disponibilité du système.",
-          ],
-        },
-      ],
-    },
-    skills: {
-      title: "Compétences",
-      groups: [
-        {
-          title: "Automatisme",
-          items: ["Allen-Bradley (Studio 5000)", "Siemens (TIA Portal)", "SCADA", "LADDER", "LIST"],
-        },
-        {
-          title: "Instrumentation",
-          items: ["Capteurs", "Transmetteurs", "Calibration", "Vérification"],
-        },
-        {
-          title: "Systèmes de contrôle",
-          items: ["Vannes de régulation", "Positionneurs", "Actionneurs pneumatiques", "Actionneurs électriques"],
-        },
-        {
-          title: "Machines électriques",
-          items: ["Machines synchrones", "Variateurs de fréquence"],
-        },
-        {
-          title: "Maintenance",
-          items: ["Préventive et corrective", "MTBF / MTTR", "TRS", "AMDEC", "GMAO"],
-        },
-        {
-          title: "Schémas et conception",
-          items: ["P&ID", "Schémas électriques", "SEE Electrical", "EPLAN", "AVEVA"],
-        },
-        {
-          title: "Programmation",
-          items: ["C", "C++", "C#", "Python", "React", "HTML"],
-        },
-        {
-          title: "Logiciels d'ingénierie",
-          items: ["MATLAB", "Automation Studio", "CREO Parametric", "GANTT Project", "Microsoft Office", "Visual Studio"],
-        },
-        {
-          title: "Sécurité des procédés",
-          items: ["HSE", "H₂S", "ATEX"],
-        },
-      ],
-    },
-    projects: {
-      title: "Projets",
-      items: [
-        {
-          title: "Serre intelligente automatisée",
-          desc: "Système basé sur Arduino avec 7 capteurs : irrigation, ventilation, acquisition de données, contrôle à distance et régulation thermique par boucles PID.",
-          tags: ["Arduino", "PID", "Capteurs"],
-        },
-        {
-          title: "MaintiTrack : GMAO",
-          desc: "Application de gestion de maintenance assistée par ordinateur (GMAO), pensée pour mobile et desktop, développée avec React.",
-          tags: ["React", "GMAO", "UX/UI"],
-        },
-        {
-          title: "Bras robotique automatisé",
-          desc: "Réalisation d'un bras robotique automatisé, sujet de mon mémoire de fin d'études de Licence.",
-          tags: ["Automatisme", "Robotique"],
-        },
-      ],
-    },
-    certs: {
-      title: "Certificats",
-      btn: "Voir le certificat",
-      idLabel: "Identifiant",
-      openNew: "Ouvrir dans un onglet",
-      close: "Fermer",
-      items: [
-        {
-          title: "Opérateur Industrie Pétrolière",
-          issuer: "TotalEnergies",
-          date: "Émise en mars 2026",
-          desc: "Compétences : automatisation des processus, pétrole et gaz",
-          id: "",
-          link: "certificats/MOOC.pdf",
-          logo: "TEPC.jpg",
-          initials: "TE",
-        },
-        {
-          title: "Gmail",
-          issuer: "United Latino Students Association",
-          date: "Émise en novembre 2025",
-          desc: "",
-          id: "2OVD7DZUDQ1D",
-          link: "https://www.coursera.org/account/accomplishments/verify/2OVD7DZUDQ1D",
-          logo: "MTN.jpg",
-          initials: "ULSA",
-        },
-        {
-          title: "Systèmes à microprocesseur et technologies embarquées",
-          issuer: "STEMpower Inc",
-          date: "Émise en avril 2025",
-          desc: "",
-          id: "",
-          link: "",
-          logo: "STEM POWER.png",
-          initials: "SP",
-        },
-        {
-          title: "Management des effectifs et des ressources",
-          issuer: "YALI Network Nigeria",
-          date: "Émise en juin 2025",
-          desc: "",
-          id: "",
-          link: "certificats/YALIII.jpg",
-          logo: "YALII.png",
-          initials: "YALI",
-        },
-        {
-          title: "Module 7",
-          issuer: "TotalEnergies",
-          date: "",
-          desc: "",
-          id: "",
-          link: "certificats/module7.pdf",
-          logo: "TEPC.jpg",
-          initials: "TE",
-        },
-        {
-          title: "Module 8",
-          issuer: "TotalEnergies",
-          date: "Émise en novembre 2025 · Expire en novembre 2028",
-          desc: "",
-          id: "",
-          link: "certificats/module8.pdf",
-          logo: "TEPC.jpg",
-          initials: "TE",
-        },
-        {
-          title: "IoT (Internet des objets), informatique sans fil et en nuage, technologies émergentes",
-          issuer: "Fondation MTN Congo",
-          date: "Émise en mai 2025",
-          desc: "Compétences : langages de programmation orientés objets, technologie informatique",
-          id: "TE1G93UYBYWS",
-          link: "https://www.coursera.org/account/accomplishments/verify/TE1G93UYBYWS",
-          logo: "MTN.jpg",
-          initials: "MTN",
-        },
-      ],
-    },
-    contact: {
-      title: "Contact",
-      intro: "Une opportunité de stage ou une question ? Écrivez-moi, je réponds avec plaisir.",
-      email: "Email",
-      phone: "Téléphone",
-      location: "Localisation",
-      locationValue: "Pointe-Noire, République du Congo",
-      send: "Envoyer un email",
-    },
-    footer: "Tous droits réservés.",
-  },
   en: {
     nav: {
       accueil: "Home",
@@ -291,57 +37,75 @@ const text = {
       certificats: "Certificates",
       contact: "Contact",
     },
+
     contactBtn: "Contact me",
-    hello: "Hello,",
-    iam: "I'm",
-    desc: "Electrical Engineering student specializing in Automation & Instrumentation. I'm looking for an internship in the Oil & Gas industry. Feel free to contact me.",
+    cvBtn: "Download CV",
+
+    hello: "Hello, I'm",
+    name: "Celestin Gloire Lédilem MOUYABI",
+    role: "Electrical Engineering Student | Automation & Instrumentation",
+    desc: "Passionate about technology, industrial systems, and innovation. Driven to develop my skills, explore new opportunities, and contribute to meaningful projects.",
+    welcome: "Welcome to my professional portfolio.",
+
     about: {
       title: "About",
-      role: "Maintenance technician",
+      role: "Maintenance Technician",
+
       p1: "I put my skills in electrical engineering, automation, instrumentation, hydraulics, pneumatics and industrial maintenance (CMMS) at the service of equipment reliability, availability and performance: planning and carrying out preventive and corrective maintenance, tracking MTTR/MTBF indicators and driving improvement actions.",
+
       p2: "Holder of TotalEnergies modules 7 and 8, I am aware of HSE requirements and the risks of industrial activities (H₂S, ATEX), which I integrate into my maintenance work.",
+
       p3: "I am looking for an internship in the Oil & Gas industry, to be carried out in December.",
+
       softTitle: "Soft skills",
+
       soft: [
         "Stress and time management",
         "Adaptability, flexibility and good communication",
         "Punctuality and diligence",
         "Innovation and continuous improvement",
       ],
+
       interestsTitle: "Interests",
+
       interests: [
         "Football and Basketball: team spirit, strategy and leadership",
         "Volunteering: community involvement in clubs and associations",
       ],
     },
+
     edu: {
       title: "Education",
+
       studies: [
         {
           title: "Bachelor's degree in Automation and Instrumentation",
           place: "Institut International 2i, Pointe-Noire",
-          period: "2024 – 2026 · Expected graduation: December 2026",
+          date: "2024 – 2026 · Expected graduation: December 2026",
           logo: "2i.jpg",
           initials: "2i",
         },
         {
           title: "Scientific Baccalaureate (Series D)",
           place: "Lycée de Madingou, Madingou",
-          period: "2023",
+          date: "2023",
           logo: "madingou.jpg",
           initials: "LM",
         },
       ],
     },
+
     exp: {
       title: "Experience",
-      items: [
+
+      jobs: [
         {
-          title: "Training manager",
-          place: "BiviTech, Pointe-Noire · Part-time · On site",
-          period: "March 2026 – present",
+          title: "Training Manager",
+          company: "BiviTech, Pointe-Noire · Part-time · On site",
+          date: "March 2026 – present",
           logo: "Bivitech.jpg",
           initials: "BT",
+
           points: [
             "Designing and delivering training programs for young people, members and partners to strengthen their skills in digital, technology and innovation.",
             "Identifying skills needs and designing practical, tailored training modules.",
@@ -351,12 +115,15 @@ const text = {
             "Skills: training engineering, project management, training facilitation, innovation and digital transformation.",
           ],
         },
+
         {
           title: "ISIC Ambassador",
-          place: "International Student Identity Card, Republic of the Congo · Full-time · On site",
-          period: "May 2025 – present",
+          company:
+            "International Student Identity Card, Republic of the Congo · Full-time · On site",
+          date: "May 2025 – present",
           logo: "ISIC.png",
           initials: "ISIC",
+
           points: [
             "Promoting the ISIC card to students and institutions, and raising awareness of student benefits and international opportunities.",
             "Developing and managing strategic partnerships (transport, services, local businesses).",
@@ -364,32 +131,38 @@ const text = {
             "Skills: negotiation and partnership development, field communication and marketing, leadership and initiative management, professional networking, staff and resource management, strategic communication.",
           ],
         },
+
         {
           title: "Industrial electricity (practical internship)",
-          place: "CFPE",
-          period: "July – August 2026",
+          company: "Vocational Training Center in Electricity (CFPE))",
+          date: "July – August 2026",
           logo: "CFPE.jpg",
           initials: "CFPE",
+
           points: [
             "Control of synchronous machines and TOSHIBA variable frequency drives.",
           ],
         },
+
         {
           title: "Hands-on workshop (practical internship)",
-          place: "CEFA Automobile, Pointe-Noire",
-          period: "February 7, 2026 – March 17, 2026",
+          company: "CEFA Automobile, Pointe-Noire",
+          date: "February 7, 2026 – March 17, 2026",
           logo: "CEFA.png",
           initials: "CEFA",
+
           points: [
             "Preventive and corrective maintenance and diagnostics of advanced embedded electronic systems, ensuring vehicle reliability and performance.",
           ],
         },
+
         {
           title: "Smart systems technician (intern)",
-          place: "ANVRI, Brazzaville",
-          period: "August 28, 2024 – February 6, 2025",
+          company: "National Agency for the Promotion of Research and Innovation Results (ANVRI), Brazzaville",
+          date: "August 28, 2024 – February 6, 2025",
           logo: "ANVRI.jpg",
           initials: "AN",
+
           points: [
             "Designed an automated smart greenhouse system based on Arduino, with 7 sensors for irrigation, ventilation, data acquisition and remote control.",
             "Implemented and tuned PID loops, with maintenance of instruments and actuators, improving thermal regulation and system availability.",
@@ -397,77 +170,154 @@ const text = {
         },
       ],
     },
+
     skills: {
       title: "Skills",
+
       groups: [
         {
           title: "Automation",
-          items: ["Allen-Bradley (Studio 5000)", "Siemens (TIA Portal)", "SCADA", "LADDER", "STL"],
+          items: [
+            "Allen-Bradley (Studio 5000)",
+            "Siemens (TIA Portal)",
+            "SCADA",
+            "LADDER",
+            "STL",
+          ],
         },
+
         {
           title: "Instrumentation",
-          items: ["Sensors", "Transmitters", "Calibration", "Verification"],
+          items: [
+            "Sensors",
+            "Transmitters",
+            "Calibration",
+            "Verification",
+          ],
         },
+
         {
           title: "Control systems",
-          items: ["Control valves", "Positioners", "Pneumatic actuators", "Electric actuators"],
+          items: [
+            "Control valves",
+            "Positioners",
+            "Pneumatic actuators",
+            "Electric actuators",
+          ],
         },
+
         {
           title: "Electrical machines",
-          items: ["Synchronous machines", "Variable frequency drives"],
+          items: [
+            "Synchronous machines",
+            "Variable frequency drives",
+          ],
         },
+
         {
           title: "Maintenance",
-          items: ["Preventive and corrective", "MTBF / MTTR", "OEE", "FMEA", "CMMS"],
+          items: [
+            "Preventive and corrective",
+            "MTBF / MTTR",
+            "OEE",
+            "FMEA",
+            "CMMS",
+          ],
         },
+
         {
           title: "Diagrams and design",
-          items: ["P&ID", "Electrical diagrams", "SEE Electrical", "EPLAN", "AVEVA"],
+          items: [
+            "P&ID",
+            "Electrical diagrams",
+            "SEE Electrical",
+            "EPLAN",
+            "AVEVA",
+          ],
         },
+
         {
           title: "Programming",
-          items: ["C", "C++", "C#", "Python", "React", "HTML"],
+          items: [
+            "C",
+            "C++",
+            "C#",
+            "Python",
+            "React",
+            "HTML",
+          ],
         },
+
         {
           title: "Engineering software",
-          items: ["MATLAB", "Automation Studio", "CREO Parametric", "GANTT Project", "Microsoft Office", "Visual Studio"],
+          items: [
+            "MATLAB",
+            "Automation Studio",
+            "CREO Parametric",
+            "GANTT Project",
+            "Microsoft Office",
+            "Visual Studio",
+          ],
         },
+
         {
           title: "Process safety",
-          items: ["HSE", "H₂S", "ATEX"],
+          items: [
+            "HSE",
+            "H₂S",
+            "ATEX",
+          ],
         },
       ],
     },
+
     projects: {
       title: "Projects",
+
       items: [
         {
           title: "Automated smart greenhouse",
           desc: "Arduino-based system with 7 sensors: irrigation, ventilation, data acquisition, remote control and thermal regulation through PID loops.",
           tags: ["Arduino", "PID", "Sensors"],
         },
+
         {
           title: "MaintiTrack: CMMS",
           desc: "Computerized maintenance management system (CMMS) designed for mobile and desktop, built with React.",
           tags: ["React", "CMMS", "UX/UI"],
         },
+
         {
           title: "Automated robotic arm",
           desc: "Construction of an automated robotic arm, the subject of my final-year Bachelor's thesis.",
           tags: ["Automation", "Robotics"],
         },
+
+        {
+          title: "Control Valve Sizing",
+          desc: "Engineering project focused on the sizing and selection of a control valve according to process operating conditions and instrumentation requirements.",
+          tags: ["Instrumentation", "Control Valve", "Dimensioning"],
+        },
+
+        {
+          title: "Reactive Power Compensation",
+          desc: "Electrical engineering project focused on compensating reactive energy in an electrical installation in order to improve the power factor and optimize electrical energy consumption.",
+          tags: ["Electrical Engineering", "Power Factor", "Compensation"],
+        },
       ],
     },
+
     certs: {
       title: "Certificates",
       btn: "View certificate",
       idLabel: "Credential ID",
       openNew: "Open in a tab",
       close: "Close",
+
       items: [
         {
           title: "Industrial Oil & Gas Operator",
-          issuer: "TotalEnergies",
+          company: "TotalEnergies",
           date: "Issued March 2026",
           desc: "Skills: process automation, oil and gas",
           id: "",
@@ -475,9 +325,10 @@ const text = {
           logo: "TEPC.jpg",
           initials: "TE",
         },
+
         {
           title: "Gmail",
-          issuer: "United Latino Students Association",
+          company: "United Latino Students Association",
           date: "Issued November 2025",
           desc: "",
           id: "2OVD7DZUDQ1D",
@@ -485,9 +336,10 @@ const text = {
           logo: "MTN.jpg",
           initials: "ULSA",
         },
+
         {
           title: "Microprocessor Systems and Embedded Technologies",
-          issuer: "STEMpower Inc",
+          company: "STEMpower Inc",
           date: "Issued April 2025",
           desc: "",
           id: "",
@@ -495,9 +347,10 @@ const text = {
           logo: "STEM POWER.png",
           initials: "SP",
         },
+
         {
           title: "Workforce and Resource Management",
-          issuer: "YALI Network Nigeria",
+          company: "YALI Network Nigeria",
           date: "Issued June 2025",
           desc: "",
           id: "",
@@ -505,9 +358,10 @@ const text = {
           logo: "YALII.png",
           initials: "YALI",
         },
+
         {
           title: "Module 7",
-          issuer: "TotalEnergies",
+          company: "TotalEnergies",
           date: "",
           desc: "",
           id: "",
@@ -515,9 +369,10 @@ const text = {
           logo: "TEPC.jpg",
           initials: "TE",
         },
+
         {
           title: "Module 8",
-          issuer: "TotalEnergies",
+          company: "TotalEnergies",
           date: "Issued November 2025 · Expires November 2028",
           desc: "",
           id: "",
@@ -525,11 +380,14 @@ const text = {
           logo: "TEPC.jpg",
           initials: "TE",
         },
+
         {
-          title: "IoT (Internet of Things), Wireless and Cloud Computing, Emerging Technologies",
-          issuer: "MTN Congo Foundation",
+          title:
+            "IoT (Internet of Things), Wireless and Cloud Computing, Emerging Technologies",
+          company: "MTN Congo Foundation",
           date: "Issued May 2025",
-          desc: "Skills: object-oriented programming languages, computer technology",
+          desc:
+            "Skills: object-oriented programming languages, computer technology",
           id: "TE1G93UYBYWS",
           link: "https://www.coursera.org/account/accomplishments/verify/TE1G93UYBYWS",
           logo: "MTN.jpg",
@@ -537,16 +395,438 @@ const text = {
         },
       ],
     },
+
     contact: {
       title: "Contact",
-      intro: "An internship opportunity or a question? Write to me, I'll be happy to reply.",
+      intro:
+        "An internship opportunity or a question? Write to me, I'll be happy to reply.",
       email: "Email",
       phone: "Phone",
       location: "Location",
       locationValue: "Pointe-Noire, Republic of the Congo",
       send: "Send an email",
     },
+
+    gallery: {
+      title: "Gallery",
+
+      items: [
+        "img1.jpg",
+        "img2.jpg",
+        "img3.jpeg",
+        "img4.jpeg",
+        "img5.jpeg",
+        "img6.jpg",
+        "img7.jpg",
+        "imag8.jpg",
+        "img9.jpg",
+        "imag10.jpg",
+      ],
+    },
+
     footer: "All rights reserved.",
+  },
+
+  fr: {
+    nav: {
+      accueil: "Accueil",
+      apropos: "À propos",
+      formations: "Formations",
+      experience: "Expérience",
+      competences: "Compétences",
+      projets: "Projets",
+      certificats: "Certificats",
+      contact: "Contact",
+    },
+
+    contactBtn: "Me contacter",
+    cvBtn: "Télécharger le CV",
+
+    hello: "Bonjour, je suis",
+    name: "Celestin Gloire Lédilem MOUYABI",
+    role: "Étudiant en Génie Électrique | Automatisme & Instrumentation",
+    desc: "Passionné par la technologie, les systèmes industriels et l'innovation. Motivé à développer mes compétences, à découvrir de nouvelles opportunités et à contribuer à des projets significatifs.",
+    welcome: "Bienvenue sur mon portfolio professionnel.",
+
+    about: {
+      title: "À propos",
+      role: "Technicien de maintenance",
+
+      p1: "Je mets mes compétences en électrotechnique, automatisme, instrumentation, hydraulique, pneumatique et maintenance industrielle (GMAO) au service de la fiabilité, de la disponibilité et de la performance des équipements : planification et exécution de la maintenance préventive et corrective, suivi des indicateurs MTTR/MTBF et actions d'amélioration.",
+
+      p2: "Titulaire des modules 7 et 8 de TotalEnergies, je suis sensibilisé aux exigences HSE et aux risques liés aux activités industrielles (H₂S, ATEX), que j'intègre dans l'exécution des travaux de maintenance.",
+
+      p3: "Je recherche un stage dans l'industrie Oil & Gas, à effectuer en décembre.",
+
+      softTitle: "Soft skills",
+
+      soft: [
+        "Gestion du stress et du temps",
+        "Adaptabilité, flexibilité et bonne communication",
+        "Ponctualité et assiduité",
+        "Innovation et amélioration continue",
+      ],
+
+      interestsTitle: "Centres d'intérêt",
+
+      interests: [
+        "Football et Basketball : esprit d'équipe, stratégie et leadership",
+        "Bénévolat : engagement communautaire au sein de clubs et associations",
+      ],
+    },
+
+    edu: {
+      title: "Formations",
+
+      studies: [
+        {
+          title: "Licence en Automatisme et Instrumentation",
+          place: "Institut International 2i, Pointe-Noire",
+          date: "2024 – 2026 · Diplôme prévu : décembre 2026",
+          logo: "2i.jpg",
+          initials: "2i",
+        },
+
+        {
+          title: "Baccalauréat scientifique (Série D)",
+          place: "Lycée de Madingou, Madingou",
+          date: "2023",
+          logo: "madingou.jpg",
+          initials: "LM",
+        },
+      ],
+    },
+
+    exp: {
+      title: "Expérience",
+
+      jobs: [
+        {
+          title: "Responsable formation",
+          company: "BiviTech, Pointe-Noire · Temps partiel · Sur site",
+          date: "Mars 2026 – aujourd'hui",
+          logo: "Bivitech.jpg",
+          initials: "BT",
+
+          points: [
+            "Conception et mise en œuvre de programmes de formation destinés aux jeunes, aux membres et aux partenaires, pour renforcer leurs compétences en numérique, technologies et innovation.",
+            "Identification des besoins en compétences et conception de modules de formation pratiques et adaptés.",
+            "Organisation et coordination d'ateliers et de séminaires.",
+            "Promotion de l'innovation et de l'entrepreneuriat numérique.",
+            "Évaluation de l'impact des formations et amélioration continue.",
+            "Compétences : ingénierie de formation, gestion de projets, animation de formations, innovation et transformation digitale.",
+          ],
+        },
+
+        {
+          title: "Ambassadeur ISIC",
+          company:
+            "International Student Identity Card, République du Congo · Temps plein · Sur site",
+          date: "Mai 2025 – aujourd'hui",
+          logo: "ISIC.png",
+          initials: "ISIC",
+
+          points: [
+            "Promotion de la carte ISIC auprès des étudiants et des institutions, et sensibilisation aux avantages étudiants et aux opportunités internationales.",
+            "Développement et gestion de partenariats stratégiques (transport, services, entreprises locales).",
+            "Organisation et participation à des actions de communication et d'événements, et représentation de la marque ISIC au niveau local.",
+            "Compétences : négociation et développement de partenariats, communication et marketing terrain, leadership et gestion d'initiatives, réseautage professionnel, gestion des effectifs et des ressources, communication stratégique.",
+          ],
+        },
+
+        {
+          title: "Électricité industrielle (stage pratique)",
+          company: "Centre de Formation Professionnelle en Électricité (CFPE)",
+          date: "Juillet – août 2026",
+          logo: "CFPE.jpg",
+          initials: "CFPE",
+
+          points: [
+            "Commande de machines synchrones et de variateurs de fréquence TOSHIBA.",
+          ],
+        },
+
+        {
+          title: "Atelier pratique (stage pratique)",
+          company: "CEFA Automobile, Pointe-Noire",
+          date: "7 février 2026 – 17 mars 2026",
+          logo: "CEFA.png",
+          initials: "CEFA",
+
+          points: [
+            "Maintenance préventive et corrective et diagnostic des systèmes électroniques embarqués avancés, garantissant fiabilité et performance des véhicules.",
+          ],
+        },
+
+        {
+          title: "Technicien en systèmes intelligents (stagiaire)",
+          company: "Agence Nationale de Valorisation des Résultats de la Recherche et de l’Innovation (ANVRI), Brazzaville",
+          date: "28 août 2024 – 6 février 2025",
+          logo: "ANVRI.jpg",
+          initials: "AN",
+
+          points: [
+            "Conception d'un système automatisé de serre intelligente basé sur Arduino, intégrant 7 capteurs pour l'irrigation, la ventilation, l'acquisition de données et le contrôle à distance.",
+            "Mise en œuvre et optimisation de boucles PID, avec maintenance des instruments et actionneurs, améliorant la régulation thermique et la disponibilité du système.",
+          ],
+        },
+      ],
+    },
+
+    skills: {
+      title: "Compétences",
+
+      groups: [
+        {
+          title: "Automatisme",
+          items: [
+            "Allen-Bradley (Studio 5000)",
+            "Siemens (TIA Portal)",
+            "SCADA",
+            "LADDER",
+            "LIST",
+          ],
+        },
+
+        {
+          title: "Instrumentation",
+          items: [
+            "Capteurs",
+            "Transmetteurs",
+            "Calibration",
+            "Vérification",
+          ],
+        },
+
+        {
+          title: "Systèmes de contrôle",
+          items: [
+            "Vannes de régulation",
+            "Positionneurs",
+            "Actionneurs pneumatiques",
+            "Actionneurs électriques",
+          ],
+        },
+
+        {
+          title: "Machines électriques",
+          items: [
+            "Machines synchrones",
+            "Variateurs de fréquence",
+          ],
+        },
+
+        {
+          title: "Maintenance",
+          items: [
+            "Préventive et corrective",
+            "MTBF / MTTR",
+            "TRS",
+            "AMDEC",
+            "GMAO",
+          ],
+        },
+
+        {
+          title: "Schémas et conception",
+          items: [
+            "P&ID",
+            "Schémas électriques",
+            "SEE Electrical",
+            "EPLAN",
+            "AVEVA",
+          ],
+        },
+
+        {
+          title: "Programmation",
+          items: [
+            "C",
+            "C++",
+            "C#",
+            "Python",
+            "React",
+            "HTML",
+          ],
+        },
+
+        {
+          title: "Logiciels d'ingénierie",
+          items: [
+            "MATLAB",
+            "Automation Studio",
+            "CREO Parametric",
+            "GANTT Project",
+            "Microsoft Office",
+            "Visual Studio",
+          ],
+        },
+
+        {
+          title: "Sécurité des procédés",
+          items: [
+            "HSE",
+            "H₂S",
+            "ATEX",
+          ],
+        },
+      ],
+    },
+
+    projects: {
+      title: "Projets",
+
+      items: [
+        {
+          title: "Serre intelligente automatisée",
+          desc: "Système basé sur Arduino avec 7 capteurs : irrigation, ventilation, acquisition de données, contrôle à distance et régulation thermique par boucles PID.",
+          tags: ["Arduino", "PID", "Capteurs"],
+        },
+
+        {
+          title: "MaintiTrack : GMAO",
+          desc: "Application de gestion de maintenance assistée par ordinateur (GMAO), pensée pour mobile et desktop, développée avec React.",
+          tags: ["React", "GMAO", "UX/UI"],
+        },
+
+        {
+          title: "Bras robotique automatisé",
+          desc: "Réalisation d'un bras robotique automatisé, sujet de mon mémoire de fin d'études de Licence.",
+          tags: ["Automatisme", "Robotique"],
+        },
+
+        {
+          title: "Dimensionnement d'une vanne de régulation",
+          desc: "Étude de dimensionnement et de sélection d'une vanne de régulation en fonction des conditions de fonctionnement du procédé et des exigences d'instrumentation.",
+          tags: ["Instrumentation", "Vanne de régulation", "Dimensionnement"],
+        },
+
+        {
+          title: "Compensation de l'énergie réactive",
+          desc: "Étude électrique portant sur la compensation de l'énergie réactive afin d'améliorer le facteur de puissance et d'optimiser la consommation d'énergie électrique.",
+          tags: ["Électrotechnique", "Facteur de puissance", "Compensation"],
+        },
+      ],
+    },
+
+    certs: {
+      title: "Certificats",
+      btn: "Voir le certificat",
+      idLabel: "Identifiant",
+      openNew: "Ouvrir dans un onglet",
+      close: "Fermer",
+
+      items: [
+        {
+          title: "Opérateur Industrie Pétrolière",
+          company: "TotalEnergies",
+          date: "Émise en mars 2026",
+          desc: "Compétences : automatisation des processus, pétrole et gaz",
+          id: "",
+          link: "certificats/MOOC.pdf",
+          logo: "TEPC.jpg",
+          initials: "TE",
+        },
+
+        {
+          title: "Gmail",
+          company: "United Latino Students Association",
+          date: "Émise en novembre 2025",
+          desc: "",
+          id: "2OVD7DZUDQ1D",
+          link: "https://www.coursera.org/account/accomplishments/verify/2OVD7DZUDQ1D",
+          logo: "MTN.jpg",
+          initials: "ULSA",
+        },
+
+        {
+          title: "Systèmes à microprocesseur et technologies embarquées",
+          company: "STEMpower Inc",
+          date: "Émise en avril 2025",
+          desc: "",
+          id: "",
+          link: "",
+          logo: "STEM POWER.png",
+          initials: "SP",
+        },
+
+        {
+          title: "Management des effectifs et des ressources",
+          company: "YALI Network Nigeria",
+          date: "Émise en juin 2025",
+          desc: "",
+          id: "",
+          link: "certificats/YALIII.jpg",
+          logo: "YALII.png",
+          initials: "YALI",
+        },
+
+        {
+          title: "Module 7",
+          company: "TotalEnergies",
+          date: "",
+          desc: "",
+          id: "",
+          link: "certificats/module7.pdf",
+          logo: "TEPC.jpg",
+          initials: "TE",
+        },
+
+        {
+          title: "Module 8",
+          company: "TotalEnergies",
+          date: "Émise en novembre 2025 · Expire en novembre 2028",
+          desc: "",
+          id: "",
+          link: "certificats/module8.pdf",
+          logo: "TEPC.jpg",
+          initials: "TE",
+        },
+
+        {
+          title:
+            "IoT (Internet des objets), informatique sans fil et en nuage, technologies émergentes",
+          company: "Fondation MTN Congo",
+          date: "Émise en mai 2025",
+          desc:
+            "Compétences : langages de programmation orientés objets, technologie informatique",
+          id: "TE1G93UYBYWS",
+          link: "https://www.coursera.org/account/accomplishments/verify/TE1G93UYBYWS",
+          logo: "MTN.jpg",
+          initials: "MTN",
+        },
+      ],
+    },
+
+    contact: {
+      title: "Contact",
+      intro:
+        "Une opportunité de stage ou une question ? Écrivez-moi, je réponds avec plaisir.",
+      email: "Email",
+      phone: "Téléphone",
+      location: "Localisation",
+      locationValue: "Pointe-Noire, République du Congo",
+      send: "Envoyer un email",
+    },
+
+    gallery: {
+      title: "Galerie",
+
+      items: [
+        "img1.jpg",
+        "img2.jpg",
+        "img3.jpeg",
+        "img4.jpeg",
+        "img5.jpg",
+        "img6.jpg",
+        "img7.jpg",
+        "imag8.jpg",
+        "img9.jpg",
+        "imag10.jpg",
+      ],
+    },
+
+    footer: "Tous droits réservés.",
   },
 };
 
@@ -561,7 +841,6 @@ const links = [
   { href: "#contact", key: "contact", icon: Mail },
 ] as const;
 
-/* Apparition en douceur au défilement */
 function Reveal({
   children,
   delay = 0,
@@ -577,6 +856,7 @@ function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -586,7 +866,9 @@ function Reveal({
       },
       { threshold: 0.12 }
     );
+
     observer.observe(el);
+
     return () => observer.disconnect();
   }, []);
 
@@ -605,8 +887,13 @@ function Reveal({
   );
 }
 
-/* Logo de société (style avatar) : image dans public/, sinon initiales */
-function Logo({ src, initials }: { src: string; initials: string }) {
+function Logo({
+  src,
+  initials,
+}: {
+  src: string;
+  initials: string;
+}) {
   const [failed, setFailed] = useState(false);
   const showImage = src && !failed;
 
@@ -626,15 +913,14 @@ function Logo({ src, initials }: { src: string; initials: string }) {
           className="h-full w-full object-contain p-1.5"
         />
       ) : (
-        <span className="text-sm font-bold text-orange-400">{initials}</span>
+        <span className="text-sm font-bold text-orange-400">
+          {initials}
+        </span>
       )}
     </div>
   );
 }
 
-/* Bouton "Voir le certificat" :
-   - lien externe (https) : ouvre un nouvel onglet
-   - fichier dans public/ (PDF ou image) : ouvre la fenêtre d'aperçu */
 function CertButton({
   href,
   label,
@@ -651,7 +937,12 @@ function CertButton({
 
   if (href.startsWith("http")) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cls}
+      >
         <Award size={16} />
         {label}
       </a>
@@ -661,7 +952,9 @@ function CertButton({
   return (
     <button
       type="button"
-      onClick={() => onOpen(`${import.meta.env.BASE_URL}${href}`, title)}
+      onClick={() =>
+        onOpen(`${import.meta.env.BASE_URL}${href}`, title)
+      }
       className={cls}
     >
       <Award size={16} />
@@ -670,7 +963,6 @@ function CertButton({
   );
 }
 
-/* Fenêtre d'aperçu du certificat (PDF ou image) */
 function CertViewer({
   url,
   title,
@@ -690,9 +982,12 @@ function CertViewer({
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
+
     window.addEventListener("keydown", onKey);
+
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
     return () => {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = previous;
@@ -713,6 +1008,7 @@ function CertViewer({
       >
         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 text-white">
           <p className="min-w-0 truncate font-semibold">{title}</p>
+
           <div className="flex shrink-0 items-center gap-2">
             <a
               href={url}
@@ -722,6 +1018,7 @@ function CertViewer({
             >
               {openLabel}
             </a>
+
             <button
               type="button"
               onClick={onClose}
@@ -753,7 +1050,6 @@ function CertViewer({
   );
 }
 
-/* Conteneur de section avec titre */
 function Section({
   id,
   title,
@@ -772,8 +1068,12 @@ function Section({
       ? "bg-slate-900/60"
       : "bg-slate-50"
     : "";
+
   return (
-    <section id={id} className={`scroll-mt-20 px-6 py-20 lg:px-10 ${bg}`}>
+    <section
+      id={id}
+      className={`scroll-mt-20 px-6 py-20 lg:px-10 ${bg}`}
+    >
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <h2 className="text-3xl font-bold md:text-4xl">
@@ -781,17 +1081,20 @@ function Section({
             <span className="mt-3 block h-1 w-16 rounded bg-orange-400" />
           </h2>
         </Reveal>
+
         <div className="mt-10">{children}</div>
       </div>
     </section>
   );
 }
 
-function App() {
+export default function App() {
   const [open, setOpen] = useState(false);
-  const [viewer, setViewer] = useState<{ url: string; title: string } | null>(
-    null
-  );
+
+  const [viewer, setViewer] = useState<{
+    url: string;
+    title: string;
+  } | null>(null);
 
   const [dark, setDark] = useState<boolean>(() => {
     try {
@@ -803,128 +1106,177 @@ function App() {
 
   const [lang, setLang] = useState<Lang>(() => {
     try {
-      return localStorage.getItem("lang") === "en" ? "en" : "fr";
+      return localStorage.getItem("lang") === "fr" ? "fr" : "en";
     } catch {
-      return "fr";
+      return "en";
     }
   });
 
   useEffect(() => {
     try {
       localStorage.setItem("theme", dark ? "dark" : "light");
-    } catch (error) {
-      console.warn("Stockage du thème indisponible", error);
-    }
+    } catch {}
   }, [dark]);
 
   useEffect(() => {
     try {
       localStorage.setItem("lang", lang);
-    } catch (error) {
-      console.warn("Stockage de la langue indisponible", error);
-    }
-    document.documentElement.lang = lang;
+    } catch {}
   }, [lang]);
 
   const t = text[lang];
 
-  // Classes selon le thème
-  const page = dark ? "bg-slate-950 text-white" : "bg-white text-slate-900";
+  const page = dark
+    ? "bg-slate-950 text-white"
+    : "bg-white text-slate-900";
+
   const navBg = dark
     ? "border-white/10 bg-slate-950/90"
     : "border-slate-200 bg-white/90";
-  const linkColor = dark ? "text-slate-300" : "text-slate-600";
-  const subColor = dark ? "text-slate-300" : "text-slate-600";
+
+  const linkColor = dark
+    ? "text-slate-300"
+    : "text-slate-600";
+
+  const subColor = dark
+    ? "text-slate-300"
+    : "text-slate-600";
+
   const card = dark
     ? "border-white/10 bg-white/5"
     : "border-slate-200 bg-white shadow-sm";
+
   const chip = dark
     ? "border-white/15 bg-white/5 text-slate-200"
     : "border-slate-200 bg-slate-50 text-slate-700";
+
   const iconBtn = dark
-    ? "border-white/10 text-slate-300 hover:text-blue-500"
-    : "border-slate-200 text-slate-600 hover:text-blue-600";
+    ? "border-white/10 text-slate-300"
+    : "border-slate-200 text-slate-600";
 
-  const toggleLang = () => setLang(lang === "fr" ? "en" : "fr");
-  const toggleTheme = () => setDark(!dark);
+  const changeLang = () => {
+    setLang((current) => (current === "en" ? "fr" : "en"));
+  };
 
-  const LangButton = (
-    <button
-      onClick={toggleLang}
-      aria-label="Changer de langue / Change language"
-      className={`flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-semibold transition ${iconBtn}`}
-    >
-      <Globe size={16} />
-      {lang === "fr" ? "EN" : "FR"}
-    </button>
-  );
-
-  const ThemeButton = (
-    <button
-      onClick={toggleTheme}
-      aria-label={dark ? "Mode clair" : "Mode sombre"}
-      className={`rounded-lg border p-2 transition ${iconBtn}`}
-    >
-      {dark ? <Sun size={18} /> : <Moon size={18} />}
-    </button>
-  );
+  const toggleTheme = () => {
+    setDark((current) => !current);
+  };
 
   return (
-    <div className={`min-h-screen scroll-smooth transition-colors ${page}`}>
+    <div className={`min-h-screen ${page}`}>
+
       {/* NAVBAR */}
-      <nav
-        className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md ${navBg}`}
+
+      <header
+        className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl ${navBg}`}
       >
-        <div className="flex w-full items-center justify-between px-6 py-4 xl:px-10">
-          <a href="#accueil" className="text-2xl font-bold">
-            <span className="text-blue-500">C</span>élestin
-            <span className="text-blue-500">.</span>
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+
+          <a
+            href="#accueil"
+            className="text-2xl font-bold"
+          >
+            Celestin<span className="text-orange-400">.</span>
           </a>
 
-          <div className="ml-auto hidden items-center gap-5 xl:flex">
-            {links.map(({ href, key, icon: Icon }) => (
-              <a
-                key={href}
-                href={href}
-                className={`flex items-center gap-2 transition hover:text-blue-500 ${linkColor}`}
-              >
-                <Icon size={18} /> {t.nav[key]}
-              </a>
-            ))}
-            {LangButton}
-            {ThemeButton}
-          </div>
+          <nav className="hidden items-center gap-6 lg:flex">
 
-          <div className="flex items-center gap-3 xl:hidden">
-            {LangButton}
-            {ThemeButton}
-            <button onClick={() => setOpen(!open)} aria-label="Menu">
-              {open ? <X size={26} /> : <Menu size={26} />}
+            {links.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={`flex items-center gap-1.5 text-sm font-medium ${linkColor}`}
+                >
+                  <Icon size={16} />
+                  {t.nav[item.key]}
+                </a>
+              );
+            })}
+
+            <button
+              type="button"
+              onClick={changeLang}
+              className={`flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm ${iconBtn}`}
+            >
+              <Globe size={16} />
+              {lang === "en" ? "FR" : "EN"}
             </button>
+
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className={`rounded-lg border p-2 ${iconBtn}`}
+              aria-label="Toggle theme"
+            >
+              {dark ? <Sun size={17} /> : <Moon size={17} />}
+            </button>
+          </nav>
+
+          <div className="flex items-center gap-2 lg:hidden">
+
+            <button
+              type="button"
+              onClick={changeLang}
+              className={`rounded-lg border px-3 py-2 text-sm ${iconBtn}`}
+            >
+              {lang === "en" ? "FR" : "EN"}
+            </button>
+
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className={`rounded-lg border p-2 ${iconBtn}`}
+            >
+              {dark ? <Sun size={17} /> : <Moon size={17} />}
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setOpen(!open)}
+              className={`rounded-lg border p-2 ${iconBtn}`}
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+
           </div>
         </div>
 
         {open && (
-          <div
-            className={`flex flex-col gap-4 border-t px-6 py-4 xl:hidden ${
-              dark ? "border-white/10" : "border-slate-200"
+          <nav
+            className={`border-t px-6 py-4 lg:hidden ${
+              dark
+                ? "border-white/10 bg-slate-950"
+                : "border-slate-200 bg-white"
             }`}
           >
-            {links.map(({ href, key, icon: Icon }) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                className={`flex items-center gap-3 hover:text-blue-500 ${linkColor}`}
-              >
-                <Icon size={18} /> {t.nav[key]}
-              </a>
-            ))}
-          </div>
-        )}
-      </nav>
+            <div className="flex flex-col gap-3">
 
-      {/* ACCUEIL */}
+              {links.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className={`flex items-center gap-2 py-2 ${linkColor}`}
+                  >
+                    <Icon size={17} />
+                    {t.nav[item.key]}
+                  </a>
+                );
+              })}
+
+            </div>
+          </nav>
+        )}
+      </header>
+
+      {/* HERO */}
+
       <main
         id="accueil"
         className={`relative min-h-screen scroll-mt-24 overflow-hidden bg-gradient-to-br ${
@@ -936,285 +1288,608 @@ function App() {
         <Particles dark={dark} />
 
         <div className="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 pb-16 pt-28 lg:grid-cols-2 lg:px-10">
+
           <div className="text-center lg:text-left">
+
             <h1 className="fade-up text-4xl font-bold leading-tight md:text-6xl">
+
               {t.hello}
+
               <br />
-              {t.iam} <span className="text-orange-400">Célestin</span>
+
+              <span className="text-orange-400">
+                {t.name}
+              </span>
+
             </h1>
 
             <p
-              className={`fade-up delay-1 mx-auto mt-6 max-w-xl text-base md:text-lg lg:mx-0 ${subColor}`}
+              className={`fade-up delay-1 mx-auto mt-6 max-w-xl text-base font-semibold md:text-xl lg:mx-0 ${subColor}`}
+            >
+              {t.role}
+            </p>
+
+            <p
+              className={`fade-up delay-1 mx-auto mt-4 max-w-xl text-base md:text-lg lg:mx-0 ${subColor}`}
             >
               {t.desc}
             </p>
 
-            <a
-              href="#contact"
-              className="fade-up delay-2 mt-8 inline-flex items-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-900 shadow-lg transition hover:bg-orange-300"
+            <p
+              className={`fade-up delay-1 mx-auto mt-4 max-w-xl text-base md:text-lg lg:mx-0 ${subColor}`}
             >
-              <Mail size={18} />
-              {t.contactBtn}
-            </a>
+              {t.welcome}
+            </p>
+
+            <div className="fade-up delay-2 mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
+
+              {/* CONTACT BUTTON */}
+
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-900 shadow-lg"
+              >
+                <Mail size={18} />
+                {t.contactBtn}
+              </a>
+
+              {/* CV BUTTON */}
+
+              <a
+                href={`${import.meta.env.BASE_URL}CV.pdf`}
+                download="Celestin-Gloire-Ledilem-MOUYABI-CV.pdf"
+                className="inline-flex items-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-900 shadow-lg"
+              >
+                <Download size={18} />
+                {t.cvBtn}
+              </a>
+
+            </div>
           </div>
 
           <div className="fade-up delay-2 flex justify-center lg:justify-end">
+
             <div className="relative h-80 w-72 sm:h-[26rem] sm:w-96">
+
               <div className="blob-back absolute inset-0 translate-x-4 translate-y-4 rotate-6 border-2 border-orange-400/70 bg-orange-400/15" />
+
               <img
                 src={`${import.meta.env.BASE_URL}photoP.png`}
-                alt="Célestin"
+                alt="Celestin Gloire Lédilem MOUYABI"
                 className="blob relative h-full w-full border-4 border-orange-400 object-cover object-top shadow-2xl"
               />
+
               <span className="floaty absolute -left-4 top-10 h-4 w-4 rounded-full bg-orange-400" />
+
               <span
                 className="floaty absolute -right-3 bottom-16 h-3 w-3 rounded-full bg-blue-400"
                 style={{ animationDelay: "1.5s" }}
               />
+
             </div>
           </div>
         </div>
       </main>
 
-      {/* À PROPOS */}
-      <Section id="apropos" title={t.about.title} dark={dark}>
-        <div className="grid gap-10 lg:grid-cols-2">
-          <Reveal>
-            <p className="text-xl font-semibold text-orange-400">
-              {t.about.role}
-            </p>
-            <p className={`mt-4 leading-relaxed ${subColor}`}>{t.about.p1}</p>
-            <p className={`mt-4 leading-relaxed ${subColor}`}>{t.about.p2}</p>
-            <p className={`mt-4 leading-relaxed ${subColor}`}>{t.about.p3}</p>
+      {/* ABOUT */}
+
+      <Section
+        id="apropos"
+        title={t.about.title}
+        dark={dark}
+        alt
+      >
+        <div className="grid gap-8 lg:grid-cols-2">
+
+          <Reveal className={`rounded-2xl border p-6 ${card}`}>
+
+            <div className="mb-5 flex items-center gap-4">
+
+              <div className="rounded-xl bg-orange-400/15 p-3 text-orange-400">
+                <User size={25} />
+              </div>
+
+              <h3 className="text-xl font-bold">
+                {t.about.role}
+              </h3>
+
+            </div>
+
+            <div className={`space-y-4 leading-7 ${subColor}`}>
+              <p>{t.about.p1}</p>
+              <p>{t.about.p2}</p>
+              <p>{t.about.p3}</p>
+            </div>
+
           </Reveal>
 
-          <div className="grid gap-6">
-            <Reveal delay={100}>
-              <div className={`rounded-2xl border p-6 ${card}`}>
-                <h3 className="text-lg font-semibold">{t.about.softTitle}</h3>
-                <ul className={`mt-3 space-y-2 ${subColor}`}>
-                  {t.about.soft.map((s) => (
-                    <li key={s} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400" />
-                      {s}
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid gap-8">
+
+            <Reveal
+              className={`rounded-2xl border p-6 ${card}`}
+              delay={100}
+            >
+              <h3 className="mb-5 text-xl font-bold">
+                {t.about.softTitle}
+              </h3>
+
+              <div className="flex flex-wrap gap-3">
+
+                {t.about.soft.map((item) => (
+                  <span
+                    key={item}
+                    className={`rounded-full border px-4 py-2 text-sm ${chip}`}
+                  >
+                    {item}
+                  </span>
+                ))}
+
               </div>
             </Reveal>
 
-            <Reveal delay={200}>
-              <div className={`rounded-2xl border p-6 ${card}`}>
-                <h3 className="text-lg font-semibold">
-                  {t.about.interestsTitle}
-                </h3>
-                <ul className={`mt-3 space-y-2 ${subColor}`}>
-                  {t.about.interests.map((s) => (
-                    <li key={s} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400" />
-                      {s}
-                    </li>
-                  ))}
-                </ul>
+            <Reveal
+              className={`rounded-2xl border p-6 ${card}`}
+              delay={200}
+            >
+              <h3 className="mb-5 text-xl font-bold">
+                {t.about.interestsTitle}
+              </h3>
+
+              <div className="space-y-3">
+
+                {t.about.interests.map((item) => (
+                  <p
+                    key={item}
+                    className={`leading-7 ${subColor}`}
+                  >
+                    • {item}
+                  </p>
+                ))}
+
               </div>
             </Reveal>
+
           </div>
         </div>
       </Section>
 
-      {/* FORMATIONS */}
-      <Section id="formations" title={t.edu.title} alt dark={dark}>
+      {/* EDUCATION */}
+
+      <Section
+        id="formations"
+        title={t.edu.title}
+        dark={dark}
+      >
         <div className="grid gap-6 md:grid-cols-2">
-          {t.edu.studies.map((s, i) => (
-            <Reveal key={s.title} delay={i * 100}>
-              <div className={`flex h-full gap-4 rounded-2xl border p-6 ${card}`}>
-                <Logo src={s.logo} initials={s.initials} />
-                <div className="min-w-0">
-                  <p className="font-semibold">{s.title}</p>
-                  <p className="mt-1 text-blue-500">{s.place}</p>
-                  <p className={`mt-1 text-sm ${subColor}`}>{s.period}</p>
+
+          {t.edu.studies.map((study, index) => (
+            <Reveal
+              key={study.title}
+              className={`rounded-2xl border p-6 ${card}`}
+              delay={index * 100}
+            >
+              <div className="flex gap-4">
+
+                <Logo
+                  src={study.logo}
+                  initials={study.initials}
+                />
+
+                <div>
+
+                  <h3 className="text-lg font-bold">
+                    {study.title}
+                  </h3>
+
+                  <p className={`mt-2 ${subColor}`}>
+                    {study.place}
+                  </p>
+
+                  <p className="mt-2 text-sm text-orange-400">
+                    {study.date}
+                  </p>
+
                 </div>
               </div>
             </Reveal>
           ))}
+
         </div>
       </Section>
 
-      {/* EXPÉRIENCE */}
-      <Section id="experience" title={t.exp.title} dark={dark}>
-        <div className="mx-auto max-w-4xl space-y-6">
-          {t.exp.items.map((e, i) => (
-            <Reveal key={e.title} delay={i * 80}>
-              <div className={`flex gap-4 rounded-2xl border p-6 ${card}`}>
-                <Logo src={e.logo} initials={e.initials} />
-                <div className="min-w-0">
-                  <p className="font-semibold">{e.title}</p>
-                  <p className="mt-1 text-blue-500">{e.place}</p>
-                  <p className={`mt-1 text-sm ${subColor}`}>{e.period}</p>
-                  <ul className={`mt-3 space-y-2 text-sm ${subColor}`}>
-                    {e.points.map((p) => (
-                      <li key={p} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400" />
-                        {p}
-                      </li>
+      {/* EXPERIENCE */}
+
+      <Section
+        id="experience"
+        title={t.exp.title}
+        dark={dark}
+        alt
+      >
+        <div className="space-y-6">
+
+          {t.exp.jobs.map((job, index) => (
+            <Reveal
+              key={job.title}
+              className={`rounded-2xl border p-6 ${card}`}
+              delay={index * 80}
+            >
+
+              <div className="flex flex-col gap-5 md:flex-row">
+
+                <Logo
+                  src={job.logo}
+                  initials={job.initials}
+                />
+
+                <div className="flex-1">
+
+                  <div className="flex flex-col justify-between gap-2 md:flex-row">
+
+                    <div>
+
+                      <h3 className="text-xl font-bold">
+                        {job.title}
+                      </h3>
+
+                      <p className={`mt-1 ${subColor}`}>
+                        {job.company}
+                      </p>
+
+                    </div>
+
+                    <span className="text-sm font-semibold text-orange-400">
+                      {job.date}
+                    </span>
+
+                  </div>
+
+                  <ul
+                    className={`mt-5 space-y-2 leading-7 ${subColor}`}
+                  >
+                    {job.points.map((point) => (
+                      <li key={point}>• {point}</li>
                     ))}
                   </ul>
+
                 </div>
               </div>
+
             </Reveal>
           ))}
+
         </div>
       </Section>
 
-      {/* COMPÉTENCES */}
-      <Section id="competences" title={t.skills.title} alt dark={dark}>
+      {/* SKILLS */}
+
+      <Section
+        id="competences"
+        title={t.skills.title}
+        dark={dark}
+      >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {t.skills.groups.map((g, i) => (
-            <Reveal key={g.title} delay={(i % 3) * 100}>
-              <div className={`h-full rounded-2xl border p-6 ${card}`}>
-                <h3 className="font-semibold text-orange-400">{g.title}</h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {g.items.map((item) => (
-                    <span
-                      key={item}
-                      className={`rounded-full border px-3 py-1 text-sm ${chip}`}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
+
+          {t.skills.groups.map((group, index) => (
+            <Reveal
+              key={group.title}
+              className={`rounded-2xl border p-6 ${card}`}
+              delay={index * 60}
+            >
+
+              <h3 className="mb-4 text-lg font-bold text-orange-400">
+                {group.title}
+              </h3>
+
+              <div className="flex flex-wrap gap-2">
+
+                {group.items.map((item) => (
+                  <span
+                    key={item}
+                    className={`rounded-full border px-3 py-1.5 text-sm ${chip}`}
+                  >
+                    {item}
+                  </span>
+                ))}
+
               </div>
+
             </Reveal>
           ))}
+
         </div>
       </Section>
 
-      {/* PROJETS */}
-      <Section id="projets" title={t.projects.title} dark={dark}>
+      {/* PROJECTS */}
+
+      <Section
+        id="projets"
+        title={t.projects.title}
+        dark={dark}
+        alt
+      >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {t.projects.items.map((p, i) => (
-            <Reveal key={p.title} delay={i * 100}>
-              <div
-                className={`h-full rounded-2xl border p-6 transition hover:-translate-y-1 hover:border-orange-400 ${card}`}
-              >
-                <FolderGit2 className="text-orange-400" size={28} />
-                <h3 className="mt-4 text-lg font-semibold">{p.title}</h3>
-                <p className={`mt-2 text-sm leading-relaxed ${subColor}`}>
-                  {p.desc}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {p.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className={`rounded-full border px-3 py-1 text-xs ${chip}`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+
+          {t.projects.items.map((project, index) => (
+            <Reveal
+              key={project.title}
+              className={`rounded-2xl border p-6 ${card}`}
+              delay={index * 100}
+            >
+
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-400/15 text-orange-400">
+                <FolderGit2 size={24} />
               </div>
+
+              <h3 className="text-xl font-bold">
+                {project.title}
+              </h3>
+
+              <p className={`mt-4 leading-7 ${subColor}`}>
+                {project.desc}
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className={`rounded-full border px-3 py-1 text-xs ${chip}`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+
+              </div>
+
             </Reveal>
           ))}
+
         </div>
       </Section>
 
-      {/* CERTIFICATS */}
-      <Section id="certificats" title={t.certs.title} alt dark={dark}>
+      {/* CERTIFICATES */}
+
+      <Section
+        id="certificats"
+        title={t.certs.title}
+        dark={dark}
+      >
         <div className="grid gap-6 md:grid-cols-2">
-          {t.certs.items.map((c, i) => (
-            <Reveal key={c.title} delay={(i % 2) * 100}>
-              <div className={`flex h-full gap-4 rounded-2xl border p-6 ${card}`}>
-                <Logo src={c.logo} initials={c.initials} />
-                <div className="min-w-0">
-                  <p className="font-semibold">{c.title}</p>
-                  <p className="mt-1 text-blue-500">{c.issuer}</p>
-                  {c.date && (
-                    <p className={`mt-1 text-sm ${subColor}`}>{c.date}</p>
-                  )}
-                  {c.desc && (
-                    <p className={`mt-1 text-sm ${subColor}`}>{c.desc}</p>
-                  )}
-                  {c.id && (
-                    <p className={`mt-1 text-xs ${subColor}`}>
-                      {t.certs.idLabel} : {c.id}
+
+          {t.certs.items.map((cert, index) => (
+            <Reveal
+              key={cert.title}
+              className={`rounded-2xl border p-6 ${card}`}
+              delay={index * 60}
+            >
+
+              <div className="flex gap-4">
+
+                <Logo
+                  src={cert.logo}
+                  initials={cert.initials}
+                />
+
+                <div className="flex-1">
+
+                  <h3 className="text-lg font-bold">
+                    {cert.title}
+                  </h3>
+
+                  <p className={`mt-1 ${subColor}`}>
+                    {cert.company}
+                  </p>
+
+                  {cert.date && (
+                    <p className="mt-2 text-sm text-orange-400">
+                      {cert.date}
                     </p>
                   )}
-                  {c.link && (
+
+                  {cert.desc && (
+                    <p className={`mt-3 text-sm ${subColor}`}>
+                      {cert.desc}
+                    </p>
+                  )}
+
+                  {cert.id && (
+                    <p className={`mt-3 text-sm ${subColor}`}>
+                      <strong>{t.certs.idLabel}:</strong>{" "}
+                      {cert.id}
+                    </p>
+                  )}
+
+                  {cert.link && (
                     <CertButton
-                      href={c.link}
+                      href={cert.link}
                       label={t.certs.btn}
-                      title={c.title}
-                      onOpen={(url, title) => setViewer({ url, title })}
+                      title={cert.title}
+                      onOpen={(url, title) =>
+                        setViewer({ url, title })
+                      }
                     />
                   )}
+
                 </div>
               </div>
+
             </Reveal>
           ))}
+
         </div>
       </Section>
 
       {/* CONTACT */}
-      <Section id="contact" title={t.contact.title} dark={dark}>
-        <Reveal>
-          <p className={`max-w-2xl ${subColor}`}>{t.contact.intro}</p>
-        </Reveal>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+      <Section
+        id="contact"
+        title={t.contact.title}
+        dark={dark}
+        alt
+      >
+        <div className="grid gap-8 lg:grid-cols-2">
+
           <Reveal>
+
+            <p
+              className={`max-w-xl text-lg leading-8 ${subColor}`}
+            >
+              {t.contact.intro}
+            </p>
+
+            <div className="mt-8 space-y-5">
+
+              <a
+                href={`mailto:${EMAIL}`}
+                className="flex items-center gap-4"
+              >
+                <span className="rounded-xl bg-orange-400/15 p-3 text-orange-400">
+                  <Mail size={21} />
+                </span>
+
+                <div>
+                  <p className="text-sm text-orange-400">
+                    {t.contact.email}
+                  </p>
+
+                  <p className={`font-medium ${subColor}`}>
+                    {EMAIL}
+                  </p>
+                </div>
+              </a>
+
+              <a
+                href={`tel:${PHONE_LINK}`}
+                className="flex items-center gap-4"
+              >
+                <span className="rounded-xl bg-orange-400/15 p-3 text-orange-400">
+                  <Phone size={21} />
+                </span>
+
+                <div>
+                  <p className="text-sm text-orange-400">
+                    {t.contact.phone}
+                  </p>
+
+                  <p className={`font-medium ${subColor}`}>
+                    {PHONE}
+                  </p>
+                </div>
+              </a>
+
+              <div className="flex items-center gap-4">
+
+                <span className="rounded-xl bg-orange-400/15 p-3 text-orange-400">
+                  <MapPin size={21} />
+                </span>
+
+                <div>
+
+                  <p className="text-sm text-orange-400">
+                    {t.contact.location}
+                  </p>
+
+                  <p className={`font-medium ${subColor}`}>
+                    {t.contact.locationValue}
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </Reveal>
+
+          <Reveal
+            className={`rounded-2xl border p-8 ${card}`}
+            delay={150}
+          >
+
+            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-orange-400/15 text-orange-400">
+              <Mail size={28} />
+            </div>
+
+            <h3 className="text-2xl font-bold">
+              {t.contact.send}
+            </h3>
+
+            <p className={`mt-3 leading-7 ${subColor}`}>
+              {t.contact.intro}
+            </p>
+
             <a
               href={`mailto:${EMAIL}`}
-              className={`block h-full rounded-2xl border p-6 transition hover:border-orange-400 ${card}`}
+              className="mt-7 inline-flex items-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-900"
             >
-              <Mail className="text-orange-400" size={26} />
-              <p className="mt-3 font-semibold">{t.contact.email}</p>
-              <p className={`mt-1 break-all text-sm ${subColor}`}>{EMAIL}</p>
+              <Mail size={18} />
+              {t.contact.send}
             </a>
+
           </Reveal>
 
-          <Reveal delay={100}>
-            <a
-              href={`tel:${PHONE_LINK}`}
-              className={`block h-full rounded-2xl border p-6 transition hover:border-orange-400 ${card}`}
-            >
-              <Phone className="text-orange-400" size={26} />
-              <p className="mt-3 font-semibold">{t.contact.phone}</p>
-              <p className={`mt-1 text-sm ${subColor}`}>{PHONE}</p>
-            </a>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <div className={`h-full rounded-2xl border p-6 ${card}`}>
-              <MapPin className="text-orange-400" size={26} />
-              <p className="mt-3 font-semibold">{t.contact.location}</p>
-              <p className={`mt-1 text-sm ${subColor}`}>
-                {t.contact.locationValue}
-              </p>
-            </div>
-          </Reveal>
         </div>
+      </Section>
 
-        <Reveal delay={150}>
-          <a
-            href={`mailto:${EMAIL}`}
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-900 shadow-lg transition hover:bg-orange-300"
-          >
-            <Mail size={18} />
-            {t.contact.send}
-          </a>
-        </Reveal>
+      {/* GALLERY */}
+
+      <Section
+        id="galerie"
+        title={t.gallery.title}
+        dark={dark}
+      >
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+
+          {t.gallery.items.map((image, index) => (
+            <Reveal
+              key={image}
+              delay={index * 50}
+            >
+
+              <button
+                type="button"
+                onClick={() =>
+                  setViewer({
+                    url: `${import.meta.env.BASE_URL}galerie/${image}`,
+                    title: `Gallery ${index + 1}`,
+                  })
+                }
+                className="group relative aspect-square w-full overflow-hidden rounded-2xl"
+              >
+
+                <img
+                  src={`${import.meta.env.BASE_URL}galerie/${image}`}
+                  alt={`Gallery ${index + 1}`}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-black/0 transition group-hover:bg-black/20" />
+
+              </button>
+
+            </Reveal>
+          ))}
+
+        </div>
       </Section>
 
       {/* FOOTER */}
-      <footer
-        className={`border-t px-6 py-6 text-center text-sm ${
-          dark ? "border-white/10 text-slate-400" : "border-slate-200 text-slate-500"
-        }`}
-      >
-        © {new Date().getFullYear()} Célestin Gloire Lédilem Mouyabi. {t.footer}
+
+      <footer className="border-t border-white/10 px-6 py-8">
+
+        <div className="mx-auto max-w-7xl text-center">
+
+          <p className={`text-sm ${subColor}`}>
+            © {new Date().getFullYear()} Celestin Gloire Lédilem MOUYABI.{" "}
+            {t.footer}
+          </p>
+
+        </div>
+
       </footer>
 
-      {/* APERÇU DU CERTIFICAT */}
+      {/* CERTIFICATE / IMAGE VIEWER */}
+
       {viewer && (
         <CertViewer
           url={viewer.url}
@@ -1224,8 +1899,7 @@ function App() {
           onClose={() => setViewer(null)}
         />
       )}
+
     </div>
   );
 }
-
-export default App;
