@@ -2,51 +2,53 @@
 
 /* ================================
    BASE RESPONSIVE
+   (dans @layer base pour ne pas écraser
+   les classes Tailwind : h-full, w-full...)
 ================================ */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
 
-html {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
+  body {
+    margin: 0;
+    overflow-x: clip;
+  }
 
-body {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  overflow-x: hidden;
-}
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+  }
 
-img,
-svg,
-video,
-canvas {
-  max-width: 100%;
-}
+  img {
+    height: auto;
+  }
 
-img {
-  height: auto;
-}
+  a {
+    overflow-wrap: anywhere;
+  }
 
-a {
-  overflow-wrap: anywhere;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    overflow-wrap: break-word;
+  }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 
 /* ================================
-   ANIMATION BLOB
+   ANIMATIONS
 ================================ */
 
 @keyframes blob {
@@ -71,6 +73,18 @@ a {
   }
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .blob {
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   animation: blob 10s ease-in-out infinite;
@@ -85,37 +99,16 @@ a {
   animation: floaty 5s ease-in-out infinite;
 }
 
+.fade-up {
+  animation: fade-up 0.8s ease both;
+}
 
-/* ================================
-   PETITS ÉCRANS
-================================ */
+.fade-up.delay-1 {
+  animation-delay: 0.15s;
+}
 
-@media (max-width: 639px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
-  /* Évite qu'un très long texte déborde */
-  h1,
-  h2,
-  h3,
-  h4,
-  p {
-    overflow-wrap: break-word;
-  }
-
-  /* Les éléments flex peuvent correctement
-     se réduire sur mobile */
-  .min-w-0 {
-    min-width: 0;
-  }
-
-  /* Blob arrière : éviter qu'il sorte
-     trop fortement de l'écran */
-  .blob-back {
-    max-width: 100%;
-  }
+.fade-up.delay-2 {
+  animation-delay: 0.3s;
 }
 
 
@@ -150,7 +143,8 @@ a {
 
   .blob,
   .blob-back,
-  .floaty {
+  .floaty,
+  .fade-up {
     animation: none;
   }
 }
