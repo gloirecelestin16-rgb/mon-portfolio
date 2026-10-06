@@ -1,24 +1,156 @@
 @import "tailwindcss";
+
+/* ================================
+   BASE RESPONSIVE
+================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  overflow-wrap: anywhere;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ================================
+   ANIMATION BLOB
+================================ */
+
 @keyframes blob {
-  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-  50%      { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
 }
 
 @keyframes floaty {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-12px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 .blob {
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   animation: blob 10s ease-in-out infinite;
 }
+
 .blob-back {
   border-radius: 40% 60% 60% 40% / 40% 50% 50% 60%;
   animation: blob 13s ease-in-out infinite reverse;
 }
-.floaty { animation: floaty 5s ease-in-out infinite; }
+
+.floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+
+/* ================================
+   PETITS ÉCRANS
+================================ */
+
+@media (max-width: 639px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Évite qu'un très long texte déborde */
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    overflow-wrap: break-word;
+  }
+
+  /* Les éléments flex peuvent correctement
+     se réduire sur mobile */
+  .min-w-0 {
+    min-width: 0;
+  }
+
+  /* Blob arrière : éviter qu'il sorte
+     trop fortement de l'écran */
+  .blob-back {
+    max-width: 100%;
+  }
+}
+
+
+/* ================================
+   TRÈS PETITS TÉLÉPHONES
+   320px – 374px
+================================ */
+
+@media (max-width: 374px) {
+  html {
+    font-size: 15px;
+  }
+
+  .blob {
+    animation-duration: 12s;
+  }
+
+  .blob-back {
+    animation-duration: 15s;
+  }
+}
+
+
+/* ================================
+   ACCESSIBILITÉ
+================================ */
 
 @media (prefers-reduced-motion: reduce) {
-  .blob, .blob-back, .floaty { animation: none; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  .blob,
+  .blob-back,
+  .floaty {
+    animation: none;
+  }
 }
