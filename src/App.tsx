@@ -35,11 +35,12 @@ const text = {
       competences: "Skills",
       projets: "Projects",
       certificats: "Certificates",
-      galerie: "Gallery",
       contact: "Contact",
     },
+
     contactBtn: "Contact me",
     cvBtn: "Download CV",
+
     hello: "Hello, I'm",
     name: "Celestin Gloire Lédilem MOUYABI",
     role: "Electrical Engineering Student | Automation & Instrumentation",
@@ -49,17 +50,24 @@ const text = {
     about: {
       title: "About",
       role: "Maintenance Technician",
+
       p1: "I put my skills in electrical engineering, automation, instrumentation, hydraulics, pneumatics and industrial maintenance (CMMS) at the service of equipment reliability, availability and performance: planning and carrying out preventive and corrective maintenance, tracking MTTR/MTBF indicators and driving improvement actions.",
+
       p2: "Holder of TotalEnergies modules 7 and 8, I am aware of HSE requirements and the risks of industrial activities (H₂S, ATEX), which I integrate into my maintenance work.",
+
       p3: "I am looking for an internship in the Oil & Gas industry, to be carried out in December.",
+
       softTitle: "Soft skills",
+
       soft: [
         "Stress and time management",
         "Adaptability, flexibility and good communication",
         "Punctuality and diligence",
         "Innovation and continuous improvement",
       ],
+
       interestsTitle: "Interests",
+
       interests: [
         "Football and Basketball: team spirit, strategy and leadership",
         "Volunteering: community involvement in clubs and associations",
@@ -68,6 +76,7 @@ const text = {
 
     edu: {
       title: "Education",
+
       studies: [
         {
           title: "Bachelor's degree in Automation and Instrumentation",
@@ -88,6 +97,7 @@ const text = {
 
     exp: {
       title: "Experience",
+
       jobs: [
         {
           title: "Training Manager",
@@ -95,6 +105,7 @@ const text = {
           date: "March 2026 – present",
           logo: "Bivitech.jpg",
           initials: "BT",
+
           points: [
             "Designing and delivering training programs for young people, members and partners to strengthen their skills in digital, technology and innovation.",
             "Identifying skills needs and designing practical, tailored training modules.",
@@ -104,6 +115,7 @@ const text = {
             "Skills: training engineering, project management, training facilitation, innovation and digital transformation.",
           ],
         },
+
         {
           title: "ISIC Ambassador",
           company:
@@ -111,6 +123,7 @@ const text = {
           date: "May 2025 – present",
           logo: "ISIC.png",
           initials: "ISIC",
+
           points: [
             "Promoting the ISIC card to students and institutions, and raising awareness of student benefits and international opportunities.",
             "Developing and managing strategic partnerships (transport, services, local businesses).",
@@ -118,26 +131,31 @@ const text = {
             "Skills: negotiation and partnership development, field communication and marketing, leadership and initiative management, professional networking, staff and resource management, strategic communication.",
           ],
         },
+
         {
           title: "Industrial electricity (practical internship)",
           company: "Vocational Training Center in Electricity (CFPE)",
           date: "July – August 2026",
           logo: "CFPE.jpg",
           initials: "CFPE",
+
           points: [
             "Control of synchronous machines and TOSHIBA variable frequency drives.",
           ],
         },
+
         {
           title: "Hands-on workshop (practical internship)",
           company: "CEFA Automobile, Pointe-Noire",
           date: "February 7, 2026 – March 17, 2026",
           logo: "CEFA.png",
           initials: "CEFA",
+
           points: [
             "Preventive and corrective maintenance and diagnostics of advanced embedded electronic systems, ensuring vehicle reliability and performance.",
           ],
         },
+
         {
           title: "Smart systems technician (intern)",
           company:
@@ -145,6 +163,7 @@ const text = {
           date: "August 28, 2024 – February 6, 2025",
           logo: "ANVRI.jpg",
           initials: "AN",
+
           points: [
             "Designed an automated smart greenhouse system based on Arduino, with 7 sensors for irrigation, ventilation, data acquisition and remote control.",
             "Implemented and tuned PID loops, with maintenance of instruments and actuators, improving thermal regulation and system availability.",
@@ -155,6 +174,7 @@ const text = {
 
     skills: {
       title: "Skills",
+
       groups: [
         {
           title: "Automation",
@@ -166,10 +186,17 @@ const text = {
             "STL",
           ],
         },
+
         {
           title: "Instrumentation",
-          items: ["Sensors", "Transmitters", "Calibration", "Verification"],
+          items: [
+            "Sensors",
+            "Transmitters",
+            "Calibration",
+            "Verification",
+          ],
         },
+
         {
           title: "Control systems",
           items: [
@@ -179,22 +206,42 @@ const text = {
             "Electric actuators",
           ],
         },
+
         {
           title: "Electrical machines",
-          items: ["Synchronous machines", "Variable frequency drives"],
+          items: [
+            "Synchronous machines",
+            "Variable frequency drives",
+          ],
         },
+
         {
           title: "Maintenance",
-          items: ["Preventive and corrective", "MTBF / MTTR", "OEE", "FMEA", "CMMS"],
+          items: [
+            "Preventive and corrective",
+            "MTBF / MTTR",
+            "OEE",
+            "FMEA",
+            "CMMS",
+          ],
         },
+
         {
           title: "Diagrams and design",
-          items: ["P&ID", "Electrical diagrams", "SEE Electrical", "EPLAN", "AVEVA"],
+          items: [
+            "P&ID",
+            "Electrical diagrams",
+            "SEE Electrical",
+            "EPLAN",
+            "AVEVA",
+          ],
         },
+
         {
           title: "Programming",
           items: ["C", "C++", "C#", "Python", "React", "HTML"],
         },
+
         {
           title: "Engineering software",
           items: [
@@ -206,6 +253,7 @@ const text = {
             "Visual Studio",
           ],
         },
+
         {
           title: "Process safety",
           items: ["HSE", "H₂S", "ATEX"],
@@ -216,6 +264,7 @@ const text = {
     projects: {
       title: "Projects",
       pdfBtn: "View PDF",
+
       items: [
         {
           title: "Automated smart greenhouse",
@@ -223,24 +272,28 @@ const text = {
           tags: ["Arduino", "PID", "Sensors"],
           link: "",
         },
+
         {
           title: "MaintiTrack: CMMS",
           desc: "Computerized maintenance management system (CMMS) designed for mobile and desktop, built with React.",
           tags: ["React", "CMMS", "UX/UI"],
           link: "",
         },
+
         {
           title: "Automated robotic arm",
           desc: "Construction of an automated robotic arm, the subject of my final-year Bachelor's thesis.",
           tags: ["Automation", "Robotics"],
           link: "",
         },
+
         {
           title: "Control Valve Sizing",
           desc: "Engineering project focused on the sizing and selection of a control valve according to process operating conditions and instrumentation requirements.",
           tags: ["Instrumentation", "Control Valve", "Dimensioning"],
           link: "projets/dimensionnement-vanne-regulation.pdf",
         },
+
         {
           title: "Reactive Power Compensation",
           desc: "Electrical engineering project focused on compensating reactive energy in an electrical installation in order to improve the power factor and optimize electrical energy consumption.",
@@ -256,6 +309,7 @@ const text = {
       idLabel: "Credential ID",
       openNew: "Open in a tab",
       close: "Close",
+
       items: [
         {
           title: "Industrial Oil & Gas Operator",
@@ -267,6 +321,7 @@ const text = {
           logo: "TEPC.jpg",
           initials: "TE",
         },
+
         {
           title: "Gmail",
           company: "United Latino Students Association",
@@ -277,6 +332,7 @@ const text = {
           logo: "MTN.jpg",
           initials: "ULSA",
         },
+
         {
           title: "Microprocessor Systems and Embedded Technologies",
           company: "STEMpower Inc",
@@ -287,6 +343,7 @@ const text = {
           logo: "STEM POWER.png",
           initials: "SP",
         },
+
         {
           title: "Workforce and Resource Management",
           company: "YALI Network Nigeria",
@@ -297,6 +354,7 @@ const text = {
           logo: "YALII.png",
           initials: "YALI",
         },
+
         {
           title: "Module 7",
           company: "TotalEnergies",
@@ -307,6 +365,7 @@ const text = {
           logo: "TEPC.jpg",
           initials: "TE",
         },
+
         {
           title: "Module 8",
           company: "TotalEnergies",
@@ -317,6 +376,7 @@ const text = {
           logo: "TEPC.jpg",
           initials: "TE",
         },
+
         {
           title:
             "IoT (Internet of Things), Wireless and Cloud Computing, Emerging Technologies",
@@ -344,6 +404,7 @@ const text = {
 
     gallery: {
       title: "Gallery",
+
       items: [
         "img1.jpg",
         "img2.jpg",
@@ -370,12 +431,12 @@ const text = {
       competences: "Compétences",
       projets: "Projets",
       certificats: "Certificats",
-      galerie: "Galerie",
       contact: "Contact",
     },
 
     contactBtn: "Me contacter",
     cvBtn: "Télécharger le CV",
+
     hello: "Bonjour, je suis",
     name: "Celestin Gloire Lédilem MOUYABI",
     role: "Étudiant en Génie Électrique | Automatisme & Instrumentation",
@@ -385,17 +446,24 @@ const text = {
     about: {
       title: "À propos",
       role: "Technicien de maintenance",
+
       p1: "Je mets mes compétences en électrotechnique, automatisme, instrumentation, hydraulique, pneumatique et maintenance industrielle (GMAO) au service de la fiabilité, de la disponibilité et de la performance des équipements : planification et exécution de la maintenance préventive et corrective, suivi des indicateurs MTTR/MTBF et actions d'amélioration.",
+
       p2: "Titulaire des modules 7 et 8 de TotalEnergies, je suis sensibilisé aux exigences HSE et aux risques liés aux activités industrielles (H₂S, ATEX), que j'intègre dans l'exécution des travaux de maintenance.",
+
       p3: "Je recherche un stage dans l'industrie Oil & Gas, à effectuer en décembre.",
+
       softTitle: "Soft skills",
+
       soft: [
         "Gestion du stress et du temps",
         "Adaptabilité, flexibilité et bonne communication",
         "Ponctualité et assiduité",
         "Innovation et amélioration continue",
       ],
+
       interestsTitle: "Centres d'intérêt",
+
       interests: [
         "Football et Basketball : esprit d'équipe, stratégie et leadership",
         "Bénévolat : engagement communautaire au sein de clubs et associations",
@@ -404,6 +472,7 @@ const text = {
 
     edu: {
       title: "Formations",
+
       studies: [
         {
           title: "Licence en Automatisme et Instrumentation",
@@ -412,6 +481,7 @@ const text = {
           logo: "2i.jpg",
           initials: "2i",
         },
+
         {
           title: "Baccalauréat scientifique (Série D)",
           place: "Lycée de Madingou, Madingou",
@@ -424,6 +494,7 @@ const text = {
 
     exp: {
       title: "Expérience",
+
       jobs: [
         {
           title: "Responsable formation",
@@ -431,6 +502,7 @@ const text = {
           date: "Mars 2026 – aujourd'hui",
           logo: "Bivitech.jpg",
           initials: "BT",
+
           points: [
             "Conception et mise en œuvre de programmes de formation destinés aux jeunes, aux membres et aux partenaires, pour renforcer leurs compétences en numérique, technologies et innovation.",
             "Identification des besoins en compétences et conception de modules de formation pratiques et adaptés.",
@@ -440,6 +512,7 @@ const text = {
             "Compétences : ingénierie de formation, gestion de projets, animation de formations, innovation et transformation digitale.",
           ],
         },
+
         {
           title: "Ambassadeur ISIC",
           company:
@@ -447,6 +520,7 @@ const text = {
           date: "Mai 2025 – aujourd'hui",
           logo: "ISIC.png",
           initials: "ISIC",
+
           points: [
             "Promotion de la carte ISIC auprès des étudiants et des institutions, et sensibilisation aux avantages étudiants et aux opportunités internationales.",
             "Développement et gestion de partenariats stratégiques (transport, services, entreprises locales).",
@@ -454,27 +528,31 @@ const text = {
             "Compétences : négociation et développement de partenariats, communication et marketing terrain, leadership et gestion d'initiatives, réseautage professionnel, gestion des effectifs et des ressources, communication stratégique.",
           ],
         },
+
         {
           title: "Électricité industrielle (stage pratique)",
-          company:
-            "Centre de Formation Professionnelle en Électricité (CFPE)",
+          company: "Centre de Formation Professionnelle en Électricité (CFPE)",
           date: "Juillet – août 2026",
           logo: "CFPE.jpg",
           initials: "CFPE",
+
           points: [
             "Commande de machines synchrones et de variateurs de fréquence TOSHIBA.",
           ],
         },
+
         {
           title: "Atelier pratique (stage pratique)",
           company: "CEFA Automobile, Pointe-Noire",
           date: "7 février 2026 – 17 mars 2026",
           logo: "CEFA.png",
           initials: "CEFA",
+
           points: [
             "Maintenance préventive et corrective et diagnostic des systèmes électroniques embarqués avancés, garantissant fiabilité et performance des véhicules.",
           ],
         },
+
         {
           title: "Technicien en systèmes intelligents (stagiaire)",
           company:
@@ -482,6 +560,7 @@ const text = {
           date: "28 août 2024 – 6 février 2025",
           logo: "ANVRI.jpg",
           initials: "AN",
+
           points: [
             "Conception d'un système automatisé de serre intelligente basé sur Arduino, intégrant 7 capteurs pour l'irrigation, la ventilation, l'acquisition de données et le contrôle à distance.",
             "Mise en œuvre et optimisation de boucles PID, avec maintenance des instruments et actionneurs, améliorant la régulation thermique et la disponibilité du système.",
@@ -492,6 +571,7 @@ const text = {
 
     skills: {
       title: "Compétences",
+
       groups: [
         {
           title: "Automatisme",
@@ -503,6 +583,7 @@ const text = {
             "LIST",
           ],
         },
+
         {
           title: "Instrumentation",
           items: [
@@ -512,6 +593,7 @@ const text = {
             "Vérification",
           ],
         },
+
         {
           title: "Systèmes de contrôle",
           items: [
@@ -521,10 +603,15 @@ const text = {
             "Actionneurs électriques",
           ],
         },
+
         {
           title: "Machines électriques",
-          items: ["Machines synchrones", "Variateurs de fréquence"],
+          items: [
+            "Machines synchrones",
+            "Variateurs de fréquence",
+          ],
         },
+
         {
           title: "Maintenance",
           items: [
@@ -535,6 +622,7 @@ const text = {
             "GMAO",
           ],
         },
+
         {
           title: "Schémas et conception",
           items: [
@@ -545,10 +633,12 @@ const text = {
             "AVEVA",
           ],
         },
+
         {
           title: "Programmation",
           items: ["C", "C++", "C#", "Python", "React", "HTML"],
         },
+
         {
           title: "Logiciels d'ingénierie",
           items: [
@@ -560,6 +650,7 @@ const text = {
             "Visual Studio",
           ],
         },
+
         {
           title: "Sécurité des procédés",
           items: ["HSE", "H₂S", "ATEX"],
@@ -570,6 +661,7 @@ const text = {
     projects: {
       title: "Projets",
       pdfBtn: "Voir le PDF",
+
       items: [
         {
           title: "Serre intelligente automatisée",
@@ -577,36 +669,32 @@ const text = {
           tags: ["Arduino", "PID", "Capteurs"],
           link: "",
         },
+
         {
           title: "MaintiTrack : GMAO",
           desc: "Application de gestion de maintenance assistée par ordinateur (GMAO), pensée pour mobile et desktop, développée avec React.",
           tags: ["React", "GMAO", "UX/UI"],
           link: "",
         },
+
         {
           title: "Bras robotique automatisé",
           desc: "Réalisation d'un bras robotique automatisé, sujet de mon mémoire de fin d'études de Licence.",
           tags: ["Automatisme", "Robotique"],
           link: "",
         },
+
         {
           title: "Dimensionnement d'une vanne de régulation",
           desc: "Étude de dimensionnement et de sélection d'une vanne de régulation en fonction des conditions de fonctionnement du procédé et des exigences d'instrumentation.",
-          tags: [
-            "Instrumentation",
-            "Vanne de régulation",
-            "Dimensionnement",
-          ],
+          tags: ["Instrumentation", "Vanne de régulation", "Dimensionnement"],
           link: "projets/dimensionnement-vanne-regulation.pdf",
         },
+
         {
           title: "Compensation de l'énergie réactive",
           desc: "Étude électrique portant sur la compensation de l'énergie réactive afin d'améliorer le facteur de puissance et d'optimiser la consommation d'énergie électrique.",
-          tags: [
-            "Électrotechnique",
-            "Facteur de puissance",
-            "Compensation",
-          ],
+          tags: ["Électrotechnique", "Facteur de puissance", "Compensation"],
           link: "projets/compensation-energie-reactive.pdf",
         },
       ],
@@ -618,6 +706,7 @@ const text = {
       idLabel: "Identifiant",
       openNew: "Ouvrir dans un onglet",
       close: "Fermer",
+
       items: [
         {
           title: "Opérateur Industrie Pétrolière",
@@ -629,6 +718,7 @@ const text = {
           logo: "TEPC.jpg",
           initials: "TE",
         },
+
         {
           title: "Gmail",
           company: "United Latino Students Association",
@@ -639,6 +729,7 @@ const text = {
           logo: "MTN.jpg",
           initials: "ULSA",
         },
+
         {
           title: "Systèmes à microprocesseur et technologies embarquées",
           company: "STEMpower Inc",
@@ -649,6 +740,7 @@ const text = {
           logo: "STEM POWER.png",
           initials: "SP",
         },
+
         {
           title: "Management des effectifs et des ressources",
           company: "YALI Network Nigeria",
@@ -659,6 +751,7 @@ const text = {
           logo: "YALII.png",
           initials: "YALI",
         },
+
         {
           title: "Module 7",
           company: "TotalEnergies",
@@ -669,6 +762,7 @@ const text = {
           logo: "TEPC.jpg",
           initials: "TE",
         },
+
         {
           title: "Module 8",
           company: "TotalEnergies",
@@ -679,6 +773,7 @@ const text = {
           logo: "TEPC.jpg",
           initials: "TE",
         },
+
         {
           title:
             "IoT (Internet des objets), informatique sans fil et en nuage, technologies émergentes",
@@ -706,6 +801,7 @@ const text = {
 
     gallery: {
       title: "Galerie",
+
       items: [
         "img1.jpg",
         "img2.jpg",
@@ -732,7 +828,6 @@ const links = [
   { href: "#competences", key: "competences", icon: Code2 },
   { href: "#projets", key: "projets", icon: FolderGit2 },
   { href: "#certificats", key: "certificats", icon: Award },
-  { href: "#galerie", key: "galerie", icon: FolderGit2 },
   { href: "#contact", key: "contact", icon: Mail },
 ] as const;
 
@@ -770,7 +865,7 @@ function Reveal({
   return (
     <div
       ref={ref}
-      className={className}
+      className={`min-w-0 ${className}`}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "none" : "translateY(32px)",
@@ -828,7 +923,7 @@ function CertButton({
   onOpen: (url: string, title: string) => void;
 }) {
   const cls =
-    "mt-4 inline-flex max-w-full flex-wrap items-center gap-2 rounded-lg border border-orange-400 px-4 py-2 text-sm font-semibold text-orange-400";
+    "mt-4 inline-flex items-center gap-2 rounded-lg border border-orange-400 px-4 py-2 text-sm font-semibold text-orange-400";
 
   if (href.startsWith("http")) {
     return (
@@ -839,7 +934,7 @@ function CertButton({
         className={cls}
       >
         <Award size={16} />
-        <span className="wrap-break-word">{label}</span>
+        {label}
       </a>
     );
   }
@@ -853,7 +948,7 @@ function CertButton({
       className={cls}
     >
       <Award size={16} />
-      <span className="wrap-break-word">{label}</span>
+      {label}
     </button>
   );
 }
@@ -898,23 +993,22 @@ function CertViewer({
       aria-label={title}
     >
       <div
-        className="flex h-full max-h-[94vh] w-full max-w-4xl flex-col overflow-hidden rounded-xl bg-slate-900 shadow-2xl sm:max-h-[90vh] sm:rounded-2xl"
+        className="flex h-full max-h-[90svh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl bg-slate-900 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex min-w-0 flex-col gap-2 border-b border-white/10 px-3 py-3 text-white sm:flex-row sm:items-center sm:justify-between sm:px-4">
-          <p className="min-w-0 flex-1 wrap-break-word text-sm font-semibold sm:text-base">
+        <div className="flex items-center justify-between gap-3 border-b border-white/10 px-3 py-3 text-white sm:px-4">
+          <p className="min-w-0 truncate font-semibold">
             {title}
           </p>
 
-          <div className="flex shrink-0 items-center justify-end gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-lg border border-orange-400 px-3 py-1.5 text-sm font-semibold text-orange-400"
+              className="rounded-lg border border-orange-400 px-3 py-1.5 text-sm font-semibold text-orange-400"
             >
-              <span className="hidden sm:inline">{openLabel}</span>
-              <span className="sm:hidden">↗</span>
+              {openLabel}
             </a>
 
             <button
@@ -928,13 +1022,32 @@ function CertViewer({
           </div>
         </div>
 
-        <div className="flex min-h-0 flex-1 items-center justify-center overflow-auto bg-slate-800 p-1 sm:p-2">
+        <div className="flex min-h-0 flex-1 items-center justify-center overflow-auto bg-slate-800">
           {isPdf ? (
-            <iframe
-              src={url}
-              title={title}
-              className="h-full min-h-0 w-full flex-1 bg-white"
-            />
+            <>
+              {/* Desktop : aperçu PDF intégré */}
+              <iframe
+                src={url}
+                title={title}
+                className="hidden h-full w-full flex-1 bg-white md:block"
+              />
+
+              {/* Mobile / Android : les PDF ne s'affichent pas dans un iframe */}
+              <div className="p-6 text-center md:hidden">
+                <p className="mb-4 break-words text-sm text-slate-300">
+                  {title}
+                </p>
+
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-orange-400 px-5 py-3 font-semibold text-slate-900 shadow-lg"
+                >
+                  {openLabel}
+                </a>
+              </div>
+            </>
           ) : (
             <img
               src={url}
@@ -970,19 +1083,17 @@ function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-20 overflow-hidden px-4 py-16 sm:px-6 sm:py-20 lg:px-10 ${bg}`}
+      className={`scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 ${bg}`}
     >
-      <div className="mx-auto max-w-6xl min-w-0">
+      <div className="mx-auto max-w-6xl">
         <Reveal>
-          <h2 className="wrap-break-word text-3xl font-bold md:text-4xl">
+          <h2 className="text-3xl font-bold md:text-4xl">
             {title}
             <span className="mt-3 block h-1 w-16 rounded bg-orange-400" />
           </h2>
         </Reveal>
 
-        <div className="mt-8 min-w-0 sm:mt-10">
-          {children}
-        </div>
+        <div className="mt-8 sm:mt-10">{children}</div>
       </div>
     </section>
   );
@@ -1063,21 +1174,24 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen w-full overflow-x-hidden ${page}`}>
+    <div className={`min-h-screen overflow-x-hidden ${page}`}>
+
       {/* NAVBAR */}
+
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl ${navBg}`}
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
+
           <a
             href="#accueil"
-            onClick={() => setOpen(false)}
-            className="shrink-0 text-xl font-bold sm:text-2xl"
+            className="text-2xl font-bold"
           >
             Celestin<span className="text-orange-400">.</span>
           </a>
 
-          <nav className="hidden items-center gap-5 lg:flex">
+          <nav className="hidden items-center gap-6 lg:flex">
+
             {links.map((item) => {
               const Icon = item.icon;
 
@@ -1110,13 +1224,15 @@ export default function App() {
             >
               {dark ? <Sun size={17} /> : <Moon size={17} />}
             </button>
+
           </nav>
 
-          <div className="flex items-center gap-1.5 lg:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
+
             <button
               type="button"
               onClick={changeLang}
-              className={`rounded-lg border px-2.5 py-2 text-sm ${iconBtn}`}
+              className={`rounded-lg border px-3 py-2 text-sm ${iconBtn}`}
             >
               {lang === "en" ? "FR" : "EN"}
             </button>
@@ -1132,25 +1248,26 @@ export default function App() {
 
             <button
               type="button"
-              onClick={() => setOpen((current) => !current)}
+              onClick={() => setOpen(!open)}
               className={`rounded-lg border p-2 ${iconBtn}`}
               aria-label="Menu"
-              aria-expanded={open}
             >
               {open ? <X size={20} /> : <Menu size={20} />}
             </button>
+
           </div>
         </div>
 
         {open && (
           <nav
-            className={`max-h-[calc(100vh-5rem)] overflow-y-auto border-t px-4 py-4 sm:px-6 lg:hidden ${
+            className={`max-h-[calc(100svh-5rem)] overflow-y-auto border-t px-4 py-4 sm:px-6 lg:hidden ${
               dark
                 ? "border-white/10 bg-slate-950"
                 : "border-slate-200 bg-white"
             }`}
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
+
               {links.map((item) => {
                 const Icon = item.icon;
 
@@ -1159,24 +1276,24 @@ export default function App() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className={`flex items-center gap-2 rounded-lg px-2 py-2.5 ${linkColor}`}
+                    className={`flex items-center gap-2 py-2 ${linkColor}`}
                   >
                     <Icon size={17} />
-                    <span className="wrap-break-word">
-                      {t.nav[item.key]}
-                    </span>
+                    {t.nav[item.key]}
                   </a>
                 );
               })}
+
             </div>
           </nav>
         )}
       </header>
 
       {/* HERO */}
+
       <main
         id="accueil"
-        className={`relative min-h-screen scroll-mt-24 overflow-hidden bg-gradient-to-br ${
+        className={`relative min-h-[100svh] scroll-mt-24 overflow-hidden bg-gradient-to-br ${
           dark
             ? "from-slate-950 via-blue-950 to-slate-950"
             : "from-sky-50 via-blue-100 to-sky-50"
@@ -1184,57 +1301,71 @@ export default function App() {
       >
         <Particles dark={dark} />
 
-        <div className="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center gap-10 px-4 pb-16 pt-28 sm:gap-12 sm:px-6 lg:grid-cols-2 lg:px-10">
+        <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-7xl items-center gap-10 px-4 pb-16 pt-28 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-10">
+
           <div className="min-w-0 text-center lg:text-left">
-            <h1 className="fade-up wrap-break-word text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-6xl">
+
+            <h1 className="fade-up break-words text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">
+
               {t.hello}
+
               <br />
-              <span className="wrap-break-word text-orange-400">
+
+              <span className="text-orange-400">
                 {t.name}
               </span>
+
             </h1>
 
             <p
-              className={`fade-up delay-1 mx-auto mt-6 max-w-xl wrap-break-word text-base font-semibold sm:text-lg md:text-xl lg:mx-0 ${subColor}`}
+              className={`fade-up delay-1 mx-auto mt-6 max-w-xl text-base font-semibold md:text-xl lg:mx-0 ${subColor}`}
             >
               {t.role}
             </p>
 
             <p
-              className={`fade-up delay-1 mx-auto mt-4 max-w-xl wrap-break-word text-base sm:text-lg lg:mx-0 ${subColor}`}
+              className={`fade-up delay-1 mx-auto mt-4 max-w-xl text-base md:text-lg lg:mx-0 ${subColor}`}
             >
               {t.desc}
             </p>
 
             <p
-              className={`fade-up delay-1 mx-auto mt-4 max-w-xl wrap-break-word text-base sm:text-lg lg:mx-0 ${subColor}`}
+              className={`fade-up delay-1 mx-auto mt-4 max-w-xl text-base md:text-lg lg:mx-0 ${subColor}`}
             >
               {t.welcome}
             </p>
 
-            <div className="fade-up delay-2 mt-8 flex w-full flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4 lg:justify-start">
+            <div className="fade-up delay-2 mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 lg:justify-start">
+
+              {/* CONTACT BUTTON */}
+
               <a
                 href="#contact"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-orange-400 px-5 py-3 font-semibold text-slate-900 shadow-lg transition hover:bg-orange-300 sm:w-auto sm:px-6"
+                className="inline-flex items-center gap-2 rounded-lg bg-orange-400 px-5 py-3 font-semibold text-slate-900 shadow-lg sm:px-6"
               >
                 <Mail size={18} />
                 {t.contactBtn}
               </a>
 
+              {/* CV BUTTON */}
+
               <a
                 href={`${import.meta.env.BASE_URL}CV_Celestin_Mouyabi.pdf`}
                 download="CV_Celestin_Mouyabi.pdf"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-orange-400 px-5 py-3 font-semibold text-slate-900 shadow-lg transition hover:bg-orange-300 sm:w-auto sm:px-6"
+                className="inline-flex items-center gap-2 rounded-lg bg-orange-400 px-5 py-3 font-semibold text-slate-900 shadow-lg sm:px-6"
               >
                 <Download size={18} />
                 {t.cvBtn}
               </a>
+
             </div>
           </div>
 
-          <div className="fade-up delay-2 flex min-w-0 justify-center lg:justify-end">
-            <div className="relative h-72 w-full max-w-[16rem] sm:h-[26rem] sm:max-w-[24rem]">
-              <div className="blob-back absolute inset-0 translate-x-2 translate-y-2 rotate-6 border-2 border-orange-400/70 bg-orange-400/15 sm:translate-x-4 sm:translate-y-4" />
+          <div className="fade-up delay-2 flex justify-center lg:justify-end">
+
+            <div className="relative h-80 w-full max-w-[18rem] sm:h-[26rem] sm:max-w-sm">
+
+              <div className="blob-back absolute inset-0 translate-x-3 translate-y-3 rotate-6 border-2 border-orange-400/70 bg-orange-400/15 sm:translate-x-4 sm:translate-y-4" />
 
               <img
                 src={`${import.meta.env.BASE_URL}photoP.png`}
@@ -1242,245 +1373,287 @@ export default function App() {
                 className="blob relative h-full w-full border-4 border-orange-400 object-cover object-top shadow-2xl"
               />
 
-              <span className="floaty absolute -left-2 top-10 h-3 w-3 rounded-full bg-orange-400 sm:-left-4 sm:h-4 sm:w-4" />
+              <span className="floaty absolute -left-2 top-10 h-4 w-4 rounded-full bg-orange-400 sm:-left-4" />
 
               <span
-                className="floaty absolute -right-2 bottom-16 h-3 w-3 rounded-full bg-blue-400 sm:-right-3 sm:h-4 sm:w-4"
+                className="floaty absolute -right-1 bottom-16 h-3 w-3 rounded-full bg-blue-400 sm:-right-3"
                 style={{ animationDelay: "1.5s" }}
               />
+
             </div>
           </div>
+
         </div>
       </main>
 
       {/* ABOUT */}
+
       <Section
         id="apropos"
         title={t.about.title}
         dark={dark}
         alt
       >
-        <div className="grid min-w-0 gap-8 lg:grid-cols-2">
-          <Reveal
-            className={`min-w-0 rounded-2xl border p-5 sm:p-6 ${card}`}
-          >
-            <div className="mb-5 flex min-w-0 items-center gap-4">
+        <div className="grid gap-8 lg:grid-cols-2">
+
+          <Reveal className={`rounded-2xl border p-5 sm:p-6 ${card}`}>
+
+            <div className="mb-5 flex items-center gap-4">
+
               <div className="shrink-0 rounded-xl bg-orange-400/15 p-3 text-orange-400">
                 <User size={25} />
               </div>
 
-              <h3 className="min-w-0 wrap-break-word text-xl font-bold">
+              <h3 className="min-w-0 text-xl font-bold">
                 {t.about.role}
               </h3>
+
             </div>
 
-            <div className={`space-y-4 wrap-break-word leading-7 ${subColor}`}>
+            <div className={`space-y-4 leading-7 ${subColor}`}>
               <p>{t.about.p1}</p>
               <p>{t.about.p2}</p>
               <p>{t.about.p3}</p>
             </div>
+
           </Reveal>
 
           <div className="grid min-w-0 gap-8">
+
             <Reveal
-              className={`min-w-0 rounded-2xl border p-5 sm:p-6 ${card}`}
+              className={`rounded-2xl border p-5 sm:p-6 ${card}`}
               delay={100}
             >
-              <h3 className="mb-5 wrap-break-word text-xl font-bold">
+              <h3 className="mb-5 text-xl font-bold">
                 {t.about.softTitle}
               </h3>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+
                 {t.about.soft.map((item) => (
                   <span
                     key={item}
-                    className={`max-w-full wrap-break-word rounded-full border px-4 py-2 text-sm ${chip}`}
+                    className={`rounded-full border px-4 py-2 text-sm ${chip}`}
                   >
                     {item}
                   </span>
                 ))}
+
               </div>
             </Reveal>
 
             <Reveal
-              className={`min-w-0 rounded-2xl border p-5 sm:p-6 ${card}`}
+              className={`rounded-2xl border p-5 sm:p-6 ${card}`}
               delay={200}
             >
-              <h3 className="mb-5 wrap-break-word text-xl font-bold">
+              <h3 className="mb-5 text-xl font-bold">
                 {t.about.interestsTitle}
               </h3>
 
               <div className="space-y-3">
+
                 {t.about.interests.map((item) => (
                   <p
                     key={item}
-                    className={`wrap-break-word leading-7 ${subColor}`}
+                    className={`leading-7 ${subColor}`}
                   >
                     • {item}
                   </p>
                 ))}
+
               </div>
             </Reveal>
+
           </div>
         </div>
       </Section>
 
       {/* EDUCATION */}
+
       <Section
         id="formations"
         title={t.edu.title}
         dark={dark}
       >
-        <div className="grid min-w-0 gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
+
           {t.edu.studies.map((study, index) => (
             <Reveal
               key={study.title}
-              className={`min-w-0 rounded-2xl border p-5 sm:p-6 ${card}`}
+              className={`rounded-2xl border p-5 sm:p-6 ${card}`}
               delay={index * 100}
             >
-              <div className="flex min-w-0 flex-col gap-4 sm:flex-row">
+              <div className="flex gap-4">
+
                 <Logo
                   src={study.logo}
                   initials={study.initials}
                 />
 
-                <div className="min-w-0">
-                  <h3 className="wrap-break-word text-lg font-bold">
+                <div className="min-w-0 flex-1">
+
+                  <h3 className="break-words text-lg font-bold">
                     {study.title}
                   </h3>
 
-                  <p className={`mt-2 wrap-break-word ${subColor}`}>
+                  <p className={`mt-2 ${subColor}`}>
                     {study.place}
                   </p>
 
-                  <p className="mt-2 wrap-break-word text-sm text-orange-400">
+                  <p className="mt-2 text-sm text-orange-400">
                     {study.date}
                   </p>
+
                 </div>
               </div>
             </Reveal>
           ))}
+
         </div>
       </Section>
 
       {/* EXPERIENCE */}
+
       <Section
         id="experience"
         title={t.exp.title}
         dark={dark}
         alt
       >
-        <div className="min-w-0 space-y-6">
+        <div className="space-y-6">
+
           {t.exp.jobs.map((job, index) => (
             <Reveal
               key={job.title}
-              className={`min-w-0 rounded-2xl border p-5 sm:p-6 ${card}`}
+              className={`rounded-2xl border p-5 sm:p-6 ${card}`}
               delay={index * 80}
             >
-              <div className="flex min-w-0 flex-col gap-5 md:flex-row">
+
+              <div className="flex flex-col gap-5 md:flex-row">
+
                 <Logo
                   src={job.logo}
                   initials={job.initials}
                 />
 
                 <div className="min-w-0 flex-1">
-                  <div className="flex min-w-0 flex-col justify-between gap-2 md:flex-row">
+
+                  <div className="flex flex-col justify-between gap-2 md:flex-row">
+
                     <div className="min-w-0">
-                      <h3 className="wrap-break-word text-xl font-bold">
+
+                      <h3 className="break-words text-xl font-bold">
                         {job.title}
                       </h3>
 
-                      <p className={`mt-1 wrap-break-word ${subColor}`}>
+                      <p className={`mt-1 break-words ${subColor}`}>
                         {job.company}
                       </p>
+
                     </div>
 
-                    <span className="shrink-0 wrap-break-word text-sm font-semibold text-orange-400 md:text-right">
+                    <span className="shrink-0 text-sm font-semibold text-orange-400">
                       {job.date}
                     </span>
+
                   </div>
 
                   <ul
-                    className={`mt-5 space-y-2 wrap-break-word leading-7 ${subColor}`}
+                    className={`mt-5 space-y-2 leading-7 ${subColor}`}
                   >
                     {job.points.map((point) => (
                       <li key={point}>• {point}</li>
                     ))}
                   </ul>
+
                 </div>
               </div>
+
             </Reveal>
           ))}
+
         </div>
       </Section>
 
       {/* SKILLS */}
+
       <Section
         id="competences"
         title={t.skills.title}
         dark={dark}
       >
-        <div className="grid min-w-0 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
           {t.skills.groups.map((group, index) => (
             <Reveal
               key={group.title}
-              className={`min-w-0 rounded-2xl border p-5 sm:p-6 ${card}`}
+              className={`rounded-2xl border p-5 sm:p-6 ${card}`}
               delay={index * 60}
             >
-              <h3 className="mb-4 wrap-break-word text-lg font-bold text-orange-400">
+
+              <h3 className="mb-4 text-lg font-bold text-orange-400">
                 {group.title}
               </h3>
 
               <div className="flex flex-wrap gap-2">
+
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className={`max-w-full wrap-break-word rounded-full border px-3 py-1.5 text-sm ${chip}`}
+                    className={`rounded-full border px-3 py-1.5 text-sm ${chip}`}
                   >
                     {item}
                   </span>
                 ))}
+
               </div>
+
             </Reveal>
           ))}
+
         </div>
       </Section>
 
       {/* PROJECTS */}
+
       <Section
         id="projets"
         title={t.projects.title}
         dark={dark}
         alt
       >
-        <div className="grid min-w-0 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
           {t.projects.items.map((project, index) => (
             <Reveal
               key={project.title}
-              className={`min-w-0 rounded-2xl border p-5 sm:p-6 ${card}`}
+              className={`rounded-2xl border p-5 sm:p-6 ${card}`}
               delay={index * 100}
             >
-              <div className="mb-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-400/15 text-orange-400">
+
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-400/15 text-orange-400">
                 <FolderGit2 size={24} />
               </div>
 
-              <h3 className="wrap-break-word text-xl font-bold">
+              <h3 className="break-words text-xl font-bold">
                 {project.title}
               </h3>
 
-              <p className={`mt-4 wrap-break-word leading-7 ${subColor}`}>
+              <p className={`mt-4 leading-7 ${subColor}`}>
                 {project.desc}
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2">
+
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={`max-w-full wrap-break-word rounded-full border px-3 py-1 text-xs ${chip}`}
+                    className={`rounded-full border px-3 py-1 text-xs ${chip}`}
                   >
                     {tag}
                   </span>
                 ))}
+
               </div>
 
               {project.link && (
@@ -1492,59 +1665,66 @@ export default function App() {
                       title: project.title,
                     })
                   }
-                  className="mt-5 inline-flex max-w-full items-center justify-center gap-2 rounded-lg bg-orange-400 px-4 py-2 font-semibold text-slate-900 shadow-lg transition hover:bg-orange-300"
+                  className="mt-5 inline-flex items-center gap-2 rounded-lg bg-orange-400 px-4 py-2 font-semibold text-slate-900 shadow-lg"
                 >
                   <FolderGit2 size={16} />
                   {t.projects.pdfBtn}
                 </button>
               )}
+
             </Reveal>
           ))}
+
         </div>
       </Section>
 
       {/* CERTIFICATES */}
+
       <Section
         id="certificats"
         title={t.certs.title}
         dark={dark}
       >
-        <div className="grid min-w-0 gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
+
           {t.certs.items.map((cert, index) => (
             <Reveal
               key={cert.title}
-              className={`min-w-0 rounded-2xl border p-5 sm:p-6 ${card}`}
+              className={`rounded-2xl border p-5 sm:p-6 ${card}`}
               delay={index * 60}
             >
-              <div className="flex min-w-0 flex-col gap-4 sm:flex-row">
+
+              <div className="flex gap-4">
+
                 <Logo
                   src={cert.logo}
                   initials={cert.initials}
                 />
 
                 <div className="min-w-0 flex-1">
-                  <h3 className="wrap-break-word text-lg font-bold">
+
+                  <h3 className="break-words text-lg font-bold">
                     {cert.title}
                   </h3>
 
-                  <p className={`mt-1 wrap-break-word ${subColor}`}>
+                  <p className={`mt-1 ${subColor}`}>
                     {cert.company}
                   </p>
 
                   {cert.date && (
-                    <p className="mt-2 wrap-break-word text-sm text-orange-400">
+                    <p className="mt-2 text-sm text-orange-400">
                       {cert.date}
                     </p>
                   )}
 
                   {cert.desc && (
-                    <p className={`mt-3 wrap-break-word text-sm ${subColor}`}>
+                    <p className={`mt-3 text-sm ${subColor}`}>
                       {cert.desc}
                     </p>
                   )}
 
                   {cert.id && (
-                    <p className={`mt-3 wrap-break-word text-sm ${subColor}`}>
+                    <p className={`mt-3 break-all text-sm ${subColor}`}>
                       <strong>{t.certs.idLabel}:</strong>{" "}
                       {cert.id}
                     </p>
@@ -1560,32 +1740,39 @@ export default function App() {
                       }
                     />
                   )}
+
                 </div>
               </div>
+
             </Reveal>
           ))}
+
         </div>
       </Section>
 
       {/* CONTACT */}
+
       <Section
         id="contact"
         title={t.contact.title}
         dark={dark}
         alt
       >
-        <div className="grid min-w-0 gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2">
+
           <Reveal>
+
             <p
-              className={`max-w-xl wrap-break-word text-lg leading-8 ${subColor}`}
+              className={`max-w-xl text-lg leading-8 ${subColor}`}
             >
               {t.contact.intro}
             </p>
 
             <div className="mt-8 space-y-5">
+
               <a
                 href={`mailto:${EMAIL}`}
-                className="flex min-w-0 items-center gap-4"
+                className="flex items-center gap-4"
               >
                 <span className="shrink-0 rounded-xl bg-orange-400/15 p-3 text-orange-400">
                   <Mail size={21} />
@@ -1604,7 +1791,7 @@ export default function App() {
 
               <a
                 href={`tel:${PHONE_LINK}`}
-                className="flex min-w-0 items-center gap-4"
+                className="flex items-center gap-4"
               >
                 <span className="shrink-0 rounded-xl bg-orange-400/15 p-3 text-orange-400">
                   <Phone size={21} />
@@ -1615,69 +1802,81 @@ export default function App() {
                     {t.contact.phone}
                   </p>
 
-                  <p className={`wrap-break-word font-medium ${subColor}`}>
+                  <p className={`font-medium ${subColor}`}>
                     {PHONE}
                   </p>
                 </div>
               </a>
 
-              <div className="flex min-w-0 items-center gap-4">
+              <div className="flex items-center gap-4">
+
                 <span className="shrink-0 rounded-xl bg-orange-400/15 p-3 text-orange-400">
                   <MapPin size={21} />
                 </span>
 
                 <div className="min-w-0">
+
                   <p className="text-sm text-orange-400">
                     {t.contact.location}
                   </p>
 
-                  <p className={`wrap-break-word font-medium ${subColor}`}>
+                  <p className={`font-medium ${subColor}`}>
                     {t.contact.locationValue}
                   </p>
+
                 </div>
+
               </div>
+
             </div>
+
           </Reveal>
 
           <Reveal
-            className={`min-w-0 rounded-2xl border p-6 sm:p-8 ${card}`}
+            className={`rounded-2xl border p-6 sm:p-8 ${card}`}
             delay={150}
           >
+
             <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-orange-400/15 text-orange-400">
               <Mail size={28} />
             </div>
 
-            <h3 className="wrap-break-word text-2xl font-bold">
+            <h3 className="text-2xl font-bold">
               {t.contact.send}
             </h3>
 
-            <p className={`mt-3 wrap-break-word leading-7 ${subColor}`}>
+            <p className={`mt-3 leading-7 ${subColor}`}>
               {t.contact.intro}
             </p>
 
             <a
               href={`mailto:${EMAIL}`}
-              className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-900 transition hover:bg-orange-300 sm:w-auto"
+              className="mt-7 inline-flex items-center gap-2 rounded-lg bg-orange-400 px-6 py-3 font-semibold text-slate-900"
             >
               <Mail size={18} />
               {t.contact.send}
             </a>
+
           </Reveal>
+
         </div>
       </Section>
 
       {/* GALLERY */}
+
       <Section
         id="galerie"
         title={t.gallery.title}
         dark={dark}
       >
         <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
+
           {t.gallery.items.map((image, index) => (
             <Reveal
               key={image}
               delay={index * 50}
             >
+
               <button
                 type="button"
                 onClick={() =>
@@ -1686,32 +1885,43 @@ export default function App() {
                     title: `Gallery ${index + 1}`,
                   })
                 }
-                className="group relative aspect-square w-full overflow-hidden rounded-xl sm:rounded-2xl"
+                className="group relative aspect-square w-full overflow-hidden rounded-2xl"
               >
+
                 <img
                   src={`${import.meta.env.BASE_URL}galerie/${image}`}
                   alt={`Gallery ${index + 1}`}
+                  loading="lazy"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0 bg-black/0 transition group-hover:bg-black/20" />
+
               </button>
+
             </Reveal>
           ))}
+
         </div>
       </Section>
 
       {/* FOOTER */}
+
       <footer className="border-t border-white/10 px-4 py-8 sm:px-6">
+
         <div className="mx-auto max-w-7xl text-center">
-          <p className={`wrap-break-word text-sm ${subColor}`}>
+
+          <p className={`text-sm ${subColor}`}>
             © {new Date().getFullYear()} Celestin Gloire Lédilem MOUYABI.{" "}
             {t.footer}
           </p>
+
         </div>
+
       </footer>
 
       {/* CERTIFICATE / IMAGE / PDF VIEWER */}
+
       {viewer && (
         <CertViewer
           url={viewer.url}
@@ -1721,6 +1931,7 @@ export default function App() {
           onClose={() => setViewer(null)}
         />
       )}
+
     </div>
   );
 }
