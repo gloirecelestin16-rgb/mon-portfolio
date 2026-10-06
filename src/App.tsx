@@ -6,7 +6,6 @@ import {
   Code2,
   FolderGit2,
   Mail,
-  Menu,
   X,
   Sun,
   Moon,
@@ -1083,7 +1082,7 @@ function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20 lg:px-10 ${bg}`}
+      className={`scroll-mt-32 px-4 py-16 sm:px-6 sm:py-20 lg:scroll-mt-20 lg:px-10 ${bg}`}
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>
@@ -1100,8 +1099,6 @@ function Section({
 }
 
 export default function App() {
-  const [open, setOpen] = useState(false);
-
   const [viewer, setViewer] = useState<{
     url: string;
     title: string;
@@ -1181,7 +1178,7 @@ export default function App() {
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl ${navBg}`}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-10">
 
           <a
             href="#accueil"
@@ -1190,6 +1187,7 @@ export default function App() {
             Celestin<span className="text-orange-400">.</span>
           </a>
 
+          {/* Menu ordinateur */}
           <nav className="hidden items-center gap-6 lg:flex">
 
             {links.map((item) => {
@@ -1227,6 +1225,7 @@ export default function App() {
 
           </nav>
 
+          {/* Boutons mobile */}
           <div className="flex items-center gap-2 lg:hidden">
 
             <button
@@ -1246,47 +1245,26 @@ export default function App() {
               {dark ? <Sun size={17} /> : <Moon size={17} />}
             </button>
 
-            <button
-              type="button"
-              onClick={() => setOpen(!open)}
-              className={`rounded-lg border p-2 ${iconBtn}`}
-              aria-label="Menu"
-            >
-              {open ? <X size={20} /> : <Menu size={20} />}
-            </button>
-
           </div>
         </div>
 
-        {open && (
-          <nav
-            className={`max-h-[calc(100svh-5rem)] overflow-y-auto border-t px-4 py-4 sm:px-6 lg:hidden ${
-              dark
-                ? "border-white/10 bg-slate-950"
-                : "border-slate-200 bg-white"
-            }`}
-          >
-            <div className="flex flex-col gap-3">
+        {/* Liens visibles sur mobile : on fait défiler avec le doigt */}
+        <nav className="flex gap-2 overflow-x-auto px-4 pb-3 sm:px-6 lg:hidden">
+          {links.map((item) => {
+            const Icon = item.icon;
 
-              {links.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className={`flex items-center gap-2 py-2 ${linkColor}`}
-                  >
-                    <Icon size={17} />
-                    {t.nav[item.key]}
-                  </a>
-                );
-              })}
-
-            </div>
-          </nav>
-        )}
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                className={`flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium ${iconBtn}`}
+              >
+                <Icon size={15} />
+                {t.nav[item.key]}
+              </a>
+            );
+          })}
+        </nav>
       </header>
 
       {/* HERO */}
@@ -1301,7 +1279,7 @@ export default function App() {
       >
         <Particles dark={dark} />
 
-        <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-7xl items-center gap-10 px-4 pb-16 pt-28 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-10">
+        <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-7xl items-center gap-10 px-4 pb-16 pt-36 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:pt-28">
 
           <div className="min-w-0 text-center lg:text-left">
 
