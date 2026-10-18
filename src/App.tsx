@@ -320,7 +320,7 @@ const text = {
           desc: "Skills: mobile application development, UI/UX design, wireframing, prototyping, Material App and no-code mobile development tools.",
           id: "mcttJH2ss1",
           link: "certificats/Attestation_de_formation.pdf",
-          logo: "",
+          logo: "OIF.jpg",
           initials: "OIF",
         },
 
@@ -731,7 +731,7 @@ const text = {
           desc: "Compétences : développement d'applications mobiles, conception UI/UX, wireframes, prototypage, Material App et outils de développement mobile sans code.",
           id: "mcttJH2ss1",
           link: "certificats/Attestation_de_formation.pdf",
-          logo: "",
+          logo: "OIF.jpg",
           initials: "OIF",
         },
 
