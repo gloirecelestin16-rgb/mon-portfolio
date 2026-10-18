@@ -310,6 +310,20 @@ const text = {
       close: "Close",
 
       items: [
+        // =====================================================
+        // NOUVEAU CERTIFICAT
+        // =====================================================
+        {
+          title: "Mobile Development – Beginner Level",
+          company: "International Organisation of La Francophonie (OIF)",
+          date: "Issued October 7, 2026 · 60-hour training",
+          desc: "Skills: mobile application development, UI/UX design, wireframing, prototyping, Material App and no-code mobile development tools.",
+          id: "mcttJH2ss1",
+          link: "certificats/Attestation_de_formation.pdf",
+          logo: "",
+          initials: "OIF",
+        },
+
         {
           title: "Industrial Oil & Gas Operator",
           company: "TotalEnergies",
@@ -707,6 +721,20 @@ const text = {
       close: "Fermer",
 
       items: [
+        // =====================================================
+        // NOUVEAU CERTIFICAT
+        // =====================================================
+        {
+          title: "Développement Mobile – Niveau Débutant",
+          company: "Organisation internationale de la Francophonie (OIF)",
+          date: "Émise le 7 octobre 2026 · Formation de 60 heures",
+          desc: "Compétences : développement d'applications mobiles, conception UI/UX, wireframes, prototypage, Material App et outils de développement mobile sans code.",
+          id: "mcttJH2ss1",
+          link: "certificats/Attestation_de_formation.pdf",
+          logo: "",
+          initials: "OIF",
+        },
+
         {
           title: "Opérateur Industrie Pétrolière",
           company: "TotalEnergies",
@@ -844,6 +872,7 @@ function Reveal({
 
   useEffect(() => {
     const el = ref.current;
+
     if (!el) return;
 
     const observer = new IntersectionObserver(
@@ -969,7 +998,9 @@ function CertViewer({
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        onClose();
+      }
     };
 
     window.addEventListener("keydown", onKey);
@@ -1031,7 +1062,7 @@ function CertViewer({
                 className="hidden h-full w-full flex-1 bg-white md:block"
               />
 
-              {/* Mobile / Android : les PDF ne s'affichent pas dans un iframe */}
+              {/* Mobile / Android : ouverture externe */}
               <div className="p-6 text-center md:hidden">
                 <p className="mb-4 break-words text-sm text-slate-300">
                   {title}
@@ -1088,11 +1119,14 @@ function Section({
         <Reveal>
           <h2 className="text-3xl font-bold md:text-4xl">
             {title}
+
             <span className="mt-3 block h-1 w-16 rounded bg-orange-400" />
           </h2>
         </Reveal>
 
-        <div className="mt-8 sm:mt-10">{children}</div>
+        <div className="mt-8 sm:mt-10">
+          {children}
+        </div>
       </div>
     </section>
   );
@@ -1173,7 +1207,9 @@ export default function App() {
   return (
     <div className={`min-h-screen overflow-x-hidden ${page}`}>
 
-      {/* NAVBAR */}
+      {/* =====================================================
+          NAVBAR
+      ===================================================== */}
 
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl ${navBg}`}
@@ -1248,8 +1284,9 @@ export default function App() {
           </div>
         </div>
 
-        {/* Liens visibles sur mobile : on fait défiler avec le doigt */}
+        {/* Liens visibles sur mobile */}
         <nav className="flex gap-2 overflow-x-auto px-4 pb-3 sm:px-6 lg:hidden">
+
           {links.map((item) => {
             const Icon = item.icon;
 
@@ -1264,10 +1301,13 @@ export default function App() {
               </a>
             );
           })}
+
         </nav>
       </header>
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
       <main
         id="accueil"
@@ -1324,17 +1364,18 @@ export default function App() {
                 <Mail size={18} />
                 {t.contactBtn}
               </a>
+              
 
               {/* CV BUTTON */}
 
-              <a
-                href={`${import.meta.env.BASE_URL}CV_Celestin_Mouyabi.pdf`}
-                download="CV_Celestin_Mouyabi.pdf"
-                className="inline-flex items-center gap-2 rounded-lg bg-orange-400 px-5 py-3 font-semibold text-slate-900 shadow-lg sm:px-6"
-              >
-                <Download size={18} />
-                {t.cvBtn}
-              </a>
+<a
+  href={`${import.meta.env.BASE_URL}certificats/Cv_actualisé_Célestin.pdf`}
+  download="Cv_actualisé_Célestin.pdf"
+  className="inline-flex items-center gap-2 rounded-lg bg-orange-400 px-5 py-3 font-semibold text-slate-900 shadow-lg sm:px-6"
+>
+  <Download size={18} />
+  {t.cvBtn}
+</a>
 
             </div>
           </div>
@@ -1364,7 +1405,9 @@ export default function App() {
         </div>
       </main>
 
-      {/* ABOUT */}
+      {/* =====================================================
+          ABOUT
+      ===================================================== */}
 
       <Section
         id="apropos"
@@ -1374,7 +1417,9 @@ export default function App() {
       >
         <div className="grid gap-8 lg:grid-cols-2">
 
-          <Reveal className={`rounded-2xl border p-5 sm:p-6 ${card}`}>
+          <Reveal
+            className={`rounded-2xl border p-5 sm:p-6 ${card}`}
+          >
 
             <div className="mb-5 flex items-center gap-4">
 
@@ -1446,7 +1491,9 @@ export default function App() {
         </div>
       </Section>
 
-      {/* EDUCATION */}
+      {/* =====================================================
+          EDUCATION
+      ===================================================== */}
 
       <Section
         id="formations"
@@ -1461,6 +1508,7 @@ export default function App() {
               className={`rounded-2xl border p-5 sm:p-6 ${card}`}
               delay={index * 100}
             >
+
               <div className="flex gap-4">
 
                 <Logo
@@ -1490,7 +1538,9 @@ export default function App() {
         </div>
       </Section>
 
-      {/* EXPERIENCE */}
+      {/* =====================================================
+          EXPERIENCE
+      ===================================================== */}
 
       <Section
         id="experience"
@@ -1553,7 +1603,9 @@ export default function App() {
         </div>
       </Section>
 
-      {/* SKILLS */}
+      {/* =====================================================
+          SKILLS
+      ===================================================== */}
 
       <Section
         id="competences"
@@ -1592,7 +1644,9 @@ export default function App() {
         </div>
       </Section>
 
-      {/* PROJECTS */}
+      {/* =====================================================
+          PROJECTS
+      ===================================================== */}
 
       <Section
         id="projets"
@@ -1656,7 +1710,9 @@ export default function App() {
         </div>
       </Section>
 
-      {/* CERTIFICATES */}
+      {/* =====================================================
+          CERTIFICATES
+      ===================================================== */}
 
       <Section
         id="certificats"
@@ -1667,7 +1723,7 @@ export default function App() {
 
           {t.certs.items.map((cert, index) => (
             <Reveal
-              key={cert.title}
+              key={`${cert.title}-${cert.id || index}`}
               className={`rounded-2xl border p-5 sm:p-6 ${card}`}
               delay={index * 60}
             >
@@ -1714,7 +1770,10 @@ export default function App() {
                       label={t.certs.btn}
                       title={cert.title}
                       onOpen={(url, title) =>
-                        setViewer({ url, title })
+                        setViewer({
+                          url,
+                          title,
+                        })
                       }
                     />
                   )}
@@ -1728,7 +1787,9 @@ export default function App() {
         </div>
       </Section>
 
-      {/* CONTACT */}
+      {/* =====================================================
+          CONTACT
+      ===================================================== */}
 
       <Section
         id="contact"
@@ -1757,6 +1818,7 @@ export default function App() {
                 </span>
 
                 <div className="min-w-0">
+
                   <p className="text-sm text-orange-400">
                     {t.contact.email}
                   </p>
@@ -1764,6 +1826,7 @@ export default function App() {
                   <p className={`break-all font-medium ${subColor}`}>
                     {EMAIL}
                   </p>
+
                 </div>
               </a>
 
@@ -1776,6 +1839,7 @@ export default function App() {
                 </span>
 
                 <div className="min-w-0">
+
                   <p className="text-sm text-orange-400">
                     {t.contact.phone}
                   </p>
@@ -1783,6 +1847,7 @@ export default function App() {
                   <p className={`font-medium ${subColor}`}>
                     {PHONE}
                   </p>
+
                 </div>
               </a>
 
@@ -1840,7 +1905,9 @@ export default function App() {
         </div>
       </Section>
 
-      {/* GALLERY */}
+      {/* =====================================================
+          GALLERY
+      ===================================================== */}
 
       <Section
         id="galerie"
@@ -1883,7 +1950,9 @@ export default function App() {
         </div>
       </Section>
 
-      {/* FOOTER */}
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
 
       <footer className="border-t border-white/10 px-4 py-8 sm:px-6">
 
@@ -1898,7 +1967,9 @@ export default function App() {
 
       </footer>
 
-      {/* CERTIFICATE / IMAGE / PDF VIEWER */}
+      {/* =====================================================
+          CERTIFICATE / IMAGE / PDF VIEWER
+      ===================================================== */}
 
       {viewer && (
         <CertViewer
